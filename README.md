@@ -165,5 +165,5 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [issues-shield]: https://img.shields.io/github/issues/riansyh/finddy?style=for-the-badge
 [issues-url]: https://github.com/riansyh/finddy/issues
 [license-shield]: https://img.shields.io/github/license/riansyh/finddy?style=for-the-badge
-[license-url]: https://github.com/riansyh/finddy/blob/master/LICENSE.txt
+[license-url]: https://github.com/riansyh/finddy/blob/main/LICENSE.txt
 [product-screenshot]: public/img/homepage.png
