@@ -157,9 +157,11 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [contributors-shield]: https://img.shields.io/github/contributors/riansyh/finddy?style=for-the-badge
 [contributors-url]: https://github.com/riansyh/finddy/graphs/contributors
 [commit-activity-shield]: https://img.shields.io/github/commit-activity/w/riansyh/finddy?style=for-the-badge
+[commit-activity-url]: https://github.com/riansyh/finddy/graphs/commit-activity
 [forks-shield]: https://img.shields.io/github/forks/riansyh/finddy?style=for-the-badge
 [forks-url]: https://github.com/riansyh/finddy/network/members
 [pull-request-shield]: https://img.shields.io/github/issues-pr/riansyh/finddy?style=for-the-badge
+[pull-request-url]: https://github.com/riansyh/finddy/pulls
 [issues-shield]: https://img.shields.io/github/issues/riansyh/finddy?style=for-the-badge
 [issues-url]: https://github.com/riansyh/finddy/issues
 [license-shield]: https://img.shields.io/github/license/riansyh/finddy?style=for-the-badge
