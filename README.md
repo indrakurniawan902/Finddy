@@ -19,11 +19,11 @@
     Platform pencari teman belajar sesuai dengan bidang/minat yang dipelajari dan sebagai tempat berdiskusi seputar permasalahan saat belajar.
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/riansyh/finddy">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/riansyh/finddy/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/riansyh/finddy/issues">Request Feature</a>
   </p>
 </div>
 
@@ -128,12 +128,11 @@ This project uses Laravel 8, ReacJs, and InertiaJs which needs the following to 
 
 ### Running the Project
 
-    Start local development server
-    ```sh
-     php artisan serve
-    ```
+Start local development server
 
-    Then access the localhost url at port 8000 by visiting [localhost:8000](http://localhost:8000) or [127.0.0.1:8000](http://127.0.0.1:8000).
+     php artisan serve
+
+Then access the localhost url at port 8000 by visiting [localhost:8000](http://localhost:8000) or [127.0.0.1:8000](http://127.0.0.1:8000).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -141,7 +140,7 @@ This project uses Laravel 8, ReacJs, and InertiaJs which needs the following to 
 
 ## Usage
 
-    _TBA_
+_TBA_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
