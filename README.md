@@ -4,7 +4,7 @@
 [![Commit Activity][commit-activity-shield]][commit-activity-url]
 [![Issues][issues-shield]][issues-url]
 [![Pull Request][pull-request-shield]][pull-request-url]
-[![MIT License][license-shield]][license-url]
+[![License][license-shield]][license-url]
 
 <!-- PROJECT LOGO -->
 <br />
