@@ -21663,6 +21663,39 @@ video {
   color: rgba(250, 170, 95, var(--tw-text-opacity));
 }
 
+.-top-120 {
+  top: -300%;
+}
+
+#app {
+  position: relative;
+}
+
+.h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgba(38, 38, 65, var(--tw-text-opacity));
+}
+
+/* scroll styling */
+
+body::-webkit-scrollbar {
+  width: 0.8em;
+}
+
+body::-webkit-scrollbar-track {
+  --tw-bg-opacity: 1;
+  background-color: rgba(219, 227, 234, var(--tw-bg-opacity));
+}
+
+body::-webkit-scrollbar-thumb {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 219, 185, var(--tw-bg-opacity));
+  border-radius: 24px;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

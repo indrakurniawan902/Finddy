@@ -2971,6 +2971,79 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Bantuan.jsx":
+/*!****************************************!*\
+  !*** ./resources/js/Pages/Bantuan.jsx ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/components/Footer.jsx");
+/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Navbar */ "./resources/js/components/Navbar.jsx");
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/es/Helmet.js");
+/* harmony import */ var _components_Contact__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Contact */ "./resources/js/components/Contact.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+
+function Bantuan() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_helmet__WEBPACK_IMPORTED_MODULE_3__.Helmet, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("title", {
+        children: "Halaman Bantuan"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Navbar__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("main", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "flex flex-col container-auto gap-8 justify-center py-10 px-6 lg:px-0",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h1", {
+            className: "h2 text-center",
+            children: "Bantuan"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+            className: "my-6 text-xl",
+            children: "Finddy merupakan aplikasi yang memudahkan mahasiswa untuk mencari teman belajar sesuai dengan minat ataupun bidang yang sedang dipelajarinya. Dengan adanya teman belajar tersebut, mahasiswa dapat berbagi sumber pembelajaran sekaligus menjadi tutor sebaya dalam mempelajari fokus bidangnya tersebut."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+            className: "text-xl",
+            children: "Di dalam aplikasi Finddy juga terdapat forum tanya jawab seputar permasalahan yang dialami selama belajar, di satu sisi mahasiswa dapat mengajukan pertanyaan terkait permasalahan yang dihadapinya dan di sisi lain mahasiswa dapat memberikan jawaban untuk pertanyaan dari mahasiswa lain yang telah diajukan sebelumnya. Dengan hadirnya aplikasi Finddy, kami berharap aplikasi ini dapat membantu para mahasiswa untuk menemukan teman belajar yang sesuai dan menyelesaikan permasalahan belajarnya bersama dengan mahasiswa lain sehingga mampu mengembalikan motivasi belajar setiap pengguna aplikasi ini."
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h1", {
+            className: "h2 text-center",
+            children: "Kontak Kami"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            className: "contact flex flex-wrap justify-center gap-12 mt-6",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Contact__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              name: "Rizal Herliansyah H.",
+              contact: "089 332 443 112"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Contact__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              name: "Indra Kurinawan",
+              contact: "089 332 443 112"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Contact__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              name: "Rian Febriansyah",
+              contact: "089 332 443 112"
+            })]
+          })]
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Footer__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Bantuan);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Home.jsx":
 /*!*************************************!*\
   !*** ./resources/js/Pages/Home.jsx ***!
@@ -3042,7 +3115,7 @@ function Home() {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
           className: "flex flex-col container-auto items-center px-4 lg:px-0 text-center gap-10",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h2", {
-            className: "text-3xl font-bold text-black-1",
+            className: "h2",
             children: "Kenapa Harus Finddy?"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
             className: "flex flex-col lg:flex-row gap-8",
@@ -3201,6 +3274,42 @@ function Card(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/components/Contact.jsx":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Contact.jsx ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function Contact(_ref) {
+  var name = _ref.name,
+      contact = _ref.contact;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "flex flex-col gap-2 items-center bg-orange-3 text-white-1 rounded-md py-2 px-8",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+      className: "name font-bold text-xl",
+      children: name
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+      className: "contact text-xl",
+      children: contact
+    })]
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Contact);
+
+/***/ }),
+
 /***/ "./resources/js/components/Footer.jsx":
 /*!********************************************!*\
   !*** ./resources/js/components/Footer.jsx ***!
@@ -3258,8 +3367,10 @@ __webpack_require__.r(__webpack_exports__);
 function Navlink(_ref) {
   var children = _ref.children,
       name = _ref.name,
-      page = _ref.page;
+      page = _ref.page,
+      href = _ref.href;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    href: href,
     className: "font-semibold text-xl ".concat(page === name ? "text-blue-3" : "text-black-1", " "),
     children: children
   });
@@ -3304,22 +3415,22 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 var parsePage = function parsePage(path) {
   return path.substring(path.lastIndexOf("/"));
 };
 
-var pageActive = parsePage(window.location.pathname);
-
 function Navbar() {
+  var pageActive = parsePage(window.location.pathname);
+
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       isDrawerOpen = _useState2[0],
       setisDrawerOpen = _useState2[1];
 
-  var drawerStyle = isDrawerOpen ? "drawer lg:hidden items-center flex flex-col items-start py-8 px-6 gap-8 absolute bg-blue-1 z-10 bg-white shadow-blueDefault w-full top-20 transition-all duration-700" : "drawer lg:hidden items-center flex flex-col items-start py-8 px-6 gap-8 absolute bg-blue-1 z-10 bg-white shadow-blueDefault w-full -top-full transition-all duration-700";
+  var drawerStyle = isDrawerOpen ? "drawer lg:hidden items-center flex flex-col items-start py-8 px-6 gap-8 absolute bg-white-2 z-10 bg-white shadow-blueDefault w-full top-20 transition-all duration-700 shadow-sm" : "drawer lg:hidden items-center flex flex-col items-start py-8 px-6 gap-8 absolute bg-white-2 z-10 bg-white shadow-blueDefault w-full -top-120 transition-all duration-700 shadow-sm";
   var burgerIcon = isDrawerOpen ? "img/icon/close.svg" : "img/icon/menu.svg";
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    className: "sticky top-0 z-30",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("nav", {
       className: "bg-white-2 relative h-20 z-20 right",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
@@ -3349,10 +3460,12 @@ function Navbar() {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
             name: "/",
             page: pageActive,
+            href: "/",
             children: "Beranda"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
             name: "/bantuan",
             page: pageActive,
+            href: "/bantuan",
             children: "Bantuan"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
             type: "secondary",
@@ -3369,10 +3482,12 @@ function Navbar() {
       className: drawerStyle,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
         name: "/",
+        href: "/",
         page: pageActive,
         children: "Beranda"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
         name: "/bantuan",
+        href: "/bantuan",
         page: pageActive,
         children: "Bantuan"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
@@ -40079,6 +40194,8 @@ module.exports = function getSideChannel() {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./Bantuan": "./resources/js/Pages/Bantuan.jsx",
+	"./Bantuan.jsx": "./resources/js/Pages/Bantuan.jsx",
 	"./Home": "./resources/js/Pages/Home.jsx",
 	"./Home.jsx": "./resources/js/Pages/Home.jsx"
 };

@@ -41,9 +41,7 @@ function Home() {
                 </div>
                 <div className="py-14 bg-white-2">
                     <div className="flex flex-col container-auto items-center px-4 lg:px-0 text-center gap-10">
-                        <h2 className="text-3xl font-bold text-black-1">
-                            Kenapa Harus Finddy?
-                        </h2>
+                        <h2 className="h2">Kenapa Harus Finddy?</h2>
                         <div className="flex flex-col lg:flex-row gap-8">
                             <Card illustration="img/illustration/search.svg">
                                 Temukan teman belajar sesuai dengan{" "}

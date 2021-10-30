@@ -3,7 +3,6 @@
 [![Contributors][contributors-shield]][contributors-url]
 [![Commit Activity][commit-activity-shield]][commit-activity-url]
 [![Issues][issues-shield]][issues-url]
-[![Pull Request][pull-request-shield]][pull-request-url]
 [![License][license-shield]][license-url]
 
 <!-- PROJECT LOGO -->
@@ -19,7 +18,7 @@
     Platform pencari teman belajar sesuai dengan bidang/minat yang dipelajari dan sebagai tempat berdiskusi seputar permasalahan saat belajar.
     <br />
     <br />
-    <a href="https://github.com/riansyh/finddy">View Demo</a>
+    <a href="https://finddy.herokuapp.com/">View Demo</a>
     ·
     <a href="https://github.com/riansyh/finddy/issues">Report Bug</a>
     ·

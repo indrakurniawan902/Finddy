@@ -15,3 +15,29 @@
 .bold-orange {
     @apply font-bold text-orange-3;
 }
+
+.-top-120 {
+    top: -300%;
+}
+
+#app {
+    position: relative;
+}
+
+.h2 {
+    @apply text-3xl font-bold text-black-1;
+}
+
+/* scroll styling */
+body::-webkit-scrollbar {
+    width: 0.8em;
+}
+
+body::-webkit-scrollbar-track {
+    @apply bg-white-3;
+}
+
+body::-webkit-scrollbar-thumb {
+    @apply bg-orange-1;
+    border-radius: 24px;
+}

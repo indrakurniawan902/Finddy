@@ -18,3 +18,7 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return Inertia::render('Home'); //Sesuai dengan nama yang ada di pages
 });
+
+Route::get('/bantuan', function () {
+    return Inertia::render('Bantuan');
+});
