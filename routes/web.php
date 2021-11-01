@@ -22,3 +22,15 @@ Route::get('/', function () {
 Route::get('/bantuan', function () {
     return Inertia::render('Bantuan');
 });
+
+Route::get('/login', function () {
+    return Inertia::render('Login');
+});
+
+Route::get('/register', function () {
+    return Inertia::render('Register');
+});
+
+Route::get('/forgot', function () {
+    return Inertia::render('ForgotPassword');
+});

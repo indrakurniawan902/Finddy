@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "@inertiajs/inertia-react";
 
-function Button({ children, href, type, isFull }) {
+function Button({ children, href, type, isFull, isSubmit }) {
     let style = "rounded-lg font-semibold text-xl transition box-border ";
     style +=
         type === "primary"
@@ -11,7 +11,7 @@ function Button({ children, href, type, isFull }) {
     style += isFull ? "w-full" : "";
 
     return (
-        <button className={style}>
+        <button className={style} type={isSubmit ? "submit" : null}>
             <Link href={href}> {children} </Link>
         </button>
     );
