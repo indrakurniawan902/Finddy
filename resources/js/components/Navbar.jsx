@@ -1,18 +1,16 @@
-import { React, Fragment, useState } from "react";
+import { React, useState } from "react";
 import { Link } from "@inertiajs/inertia-react";
 import Button from "./Button";
-import Navlink from "./NavLink";
+import Navlink from "../partials/Navlink";
+import Hamburger from "../partials/Hamburger";
 
 const parsePage = (path) => path.substring(path.lastIndexOf("/"));
 
 function Navbar() {
     let pageActive = parsePage(window.location.pathname);
     const [isDrawerOpen, setisDrawerOpen] = useState(false);
-    let drawerStyle = isDrawerOpen
-        ? "drawer lg:hidden items-center flex flex-col items-start py-8 px-6 gap-8 absolute bg-white-2 z-10 bg-white shadow-blueDefault w-full top-20 transition-all duration-700 shadow-sm"
-        : "drawer lg:hidden items-center flex flex-col items-start py-8 px-6 gap-8 absolute bg-white-2 z-10 bg-white shadow-blueDefault w-full -top-120 transition-all duration-700 shadow-sm";
-
-    let burgerIcon = isDrawerOpen ? "img/icon/close.svg" : "img/icon/menu.svg";
+    const defaultDrawer =
+        "drawer lg:hidden items-center flex flex-col items-start py-8 px-6 gap-8 absolute bg-blue-1 z-10 shadow-blueDefault w-full top-20 transition-all duration-700 shadow-sm";
 
     return (
         <div className="sticky top-0 z-30">
@@ -20,13 +18,22 @@ function Navbar() {
                 <div className="container-auto flex items-center justify-between h-full px-4 lg:px-0">
                     <div className="logo">
                         <Link href="/">
-                            <img src="img/logo-full.svg" alt="logo" />
+                            <picture>
+                                <source
+                                    media="(max-width: 700px)"
+                                    srcSet="./img/logo.svg"
+                                />
+                                <img src="./img/logo-full.svg" alt="logo"></img>
+                            </picture>
                         </Link>
                     </div>
 
                     <div className="lg:hidden">
-                        <button onClick={() => setisDrawerOpen(!isDrawerOpen)}>
-                            <img src={burgerIcon} alt="menu-icon" />
+                        <button
+                            className="h-10 w-10 flex flex-col justify-center items-center group"
+                            onClick={() => setisDrawerOpen(!isDrawerOpen)}
+                        >
+                            <Hamburger isOpen={isDrawerOpen}></Hamburger>
                         </button>
                     </div>
 
@@ -50,7 +57,12 @@ function Navbar() {
                     </div>
                 </div>
             </nav>
-            <div className={drawerStyle}>
+
+            <div
+                className={`${defaultDrawer} ${
+                    isDrawerOpen ? "top-20" : "-top-120"
+                }`}
+            >
                 <Navlink name="/" href="/" page={pageActive}>
                     Beranda
                 </Navlink>

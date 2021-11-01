@@ -1,10 +1,17 @@
-import { React } from "react";
+import { React, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import { Helmet } from "react-helmet";
 import Contact from "../components/Contact";
+import FAQCard from "../partials/FAQCard";
+import { faqs } from "../data/faq-data";
+import AOS from "AOS";
 
 function Bantuan() {
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
     return (
         <>
             <Helmet>
@@ -13,8 +20,8 @@ function Bantuan() {
 
             <Navbar></Navbar>
             <main>
-                <div className="flex flex-col container-auto gap-8 justify-center py-10 px-6 lg:px-0">
-                    <div>
+                <div className="flex flex-col container-auto gap-10 justify-center py-10 px-6 lg:px-0">
+                    <div data-aos="fade-up" data-aos-duration="800">
                         <h1 className="h2 text-center">Bantuan</h1>
                         <p className="my-6 text-xl">
                             Finddy merupakan aplikasi yang memudahkan mahasiswa
@@ -40,7 +47,7 @@ function Bantuan() {
                             aplikasi ini.
                         </p>
                     </div>
-                    <div>
+                    <div data-aos="fade-up" data-aos-duration="1200">
                         <h1 className="h2 text-center">Kontak Kami</h1>
                         <div className="contact flex flex-wrap justify-center gap-12 mt-6">
                             <Contact
@@ -57,9 +64,16 @@ function Bantuan() {
                             />
                         </div>
                     </div>
-                    {/* <div>
-                        <h1 className="h2 text-center">FAQ</h1>
-                    </div> */}
+                    <div data-aos="fade-up" data-aos-duration="1400">
+                        <h1 className="h2 text-center mb-6">FAQ</h1>
+                        {faqs.map((faq) => (
+                            <FAQCard
+                                key={faq.id}
+                                question={faq.question}
+                                answer={faq.answer}
+                            ></FAQCard>
+                        ))}
+                    </div>
                 </div>
             </main>
             <Footer></Footer>

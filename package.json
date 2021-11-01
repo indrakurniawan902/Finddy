@@ -29,6 +29,7 @@
     "dependencies": {
         "@inertiajs/inertia": "^0.10.1",
         "@inertiajs/inertia-react": "^0.7.1",
+        "aos": "^2.3.4",
         "react-helmet": "^6.1.0"
     }
 }

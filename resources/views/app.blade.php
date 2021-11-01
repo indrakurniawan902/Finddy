@@ -7,9 +7,15 @@
     <meta name="description" content="Platform pencari teman belajar sesuai dengan bidang/minat yang dipelajari dan sebagai tempat berdiskusi seputar permasalahan saat belajar.">
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
     <script src="{{ mix('/js/app.js') }}" defer></script>
-    <link rel="icon" href="{{ url('favicon.png') }}">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
   </head>
   <body>
     @inertia
+    
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

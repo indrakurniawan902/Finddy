@@ -1,11 +1,16 @@
-import { React } from "react";
+import { React, useEffect } from "react";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Button from "./../components/Button";
 import { Helmet } from "react-helmet";
+import AOS from "AOS";
 
 function Home() {
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
     return (
         <>
             <Helmet>
@@ -15,7 +20,11 @@ function Home() {
             <Navbar></Navbar>
             <main>
                 <div className="hero bg-blue-1">
-                    <div className="flex flex-col lg:flex-row gap-14 lg:gap-0 container-auto items-center justify-between py-20 px-4 lg:px-0 text-center lg:text-left">
+                    <div
+                        className="flex flex-col lg:flex-row gap-14 lg:gap-0 container-auto items-center justify-between py-20 px-4 lg:px-0 text-center lg:text-left"
+                        data-aos="fade-up"
+                        data-aos-duration="1000"
+                    >
                         <div className="flex-1">
                             <h1 className="text-black-1 font-extrabold text-4xl lg:text-5xl leading-normal lg:leading-normal">
                                 Find Your{" "}
@@ -33,7 +42,7 @@ function Home() {
                         </div>
                         <div className="flex-1 animate-bounce-slow flex items-center justify-center">
                             <img
-                                src="img/illustration/girl-book.svg"
+                                src="./img/illustration/girl-book.svg"
                                 alt="illustration-girl-book"
                             />
                         </div>
@@ -43,21 +52,30 @@ function Home() {
                     <div className="flex flex-col container-auto items-center px-4 lg:px-0 text-center gap-10">
                         <h2 className="h2">Kenapa Harus Finddy?</h2>
                         <div className="flex flex-col lg:flex-row gap-8">
-                            <Card illustration="img/illustration/search.svg">
+                            <Card
+                                illustration="./img/illustration/search.svg"
+                                duration="500"
+                            >
                                 Temukan teman belajar sesuai dengan{" "}
                                 <span className="bold-orange">
                                     bidang/minat{" "}
                                 </span>
                                 kamu
                             </Card>
-                            <Card illustration="img/illustration/solve.svg">
+                            <Card
+                                illustration="./img/illustration/solve.svg"
+                                duration="700"
+                            >
                                 Selesaikan{" "}
                                 <span className="bold-orange">
                                     permasalahan belajar
                                 </span>{" "}
                                 kamu bersama dengan pengguna lain
                             </Card>
-                            <Card illustration="img/illustration/connect.svg">
+                            <Card
+                                illustration="./img/illustration/connect.svg"
+                                duration="900"
+                            >
                                 Jalin{" "}
                                 <span className="bold-orange">
                                     koneksi dan relasi
