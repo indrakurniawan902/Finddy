@@ -30,6 +30,7 @@ function Navbar() {
 
                     <div className="lg:hidden">
                         <button
+                            aria-label="menu"
                             className="h-10 w-10 flex flex-col justify-center items-center group"
                             onClick={() => setisDrawerOpen(!isDrawerOpen)}
                         >

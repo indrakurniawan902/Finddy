@@ -36,7 +36,7 @@ function Home() {
                             <p className="text-black-2 text-xl mt-4 mb-8">
                                 Temukan teman belajarmu dengan aplikasi Finddy
                             </p>
-                            <Button type="primary" href="/daftar">
+                            <Button type="primary" href="/register">
                                 Mulai Perjalananku
                             </Button>
                         </div>
