@@ -33,7 +33,7 @@ function Register() {
     return (
         <>
             <Helmet>
-                <title>Halaman Daftar Akun</title>
+                <title>Daftar Akun</title>
             </Helmet>
 
             <Navbar />
@@ -50,7 +50,11 @@ function Register() {
                     </div>
 
                     <div className="flex-1 flex flex-col items-center justify-center gap-8">
-                        <div className="lg:w-3/5 w-9/12 max-w-xl" data-aos="fade-up" data-aos-duration="1000">
+                        <div
+                            className="lg:w-3/5 w-9/12 max-w-xl"
+                            data-aos="fade-up"
+                            data-aos-duration="1000"
+                        >
                             <div className="mb-7">
                                 <h1 className="text-black-1 text-4xl font-bold">
                                     Buat Akun Baru

@@ -17,7 +17,7 @@ function Home() {
                 <title>Finddy - Find Your Buddy to Boost Your Study</title>
             </Helmet>
 
-            <Navbar></Navbar>
+            <Navbar />
             <main>
                 <div className="hero bg-blue-1">
                     <div
@@ -86,7 +86,7 @@ function Home() {
                     </div>
                 </div>
             </main>
-            <Footer></Footer>
+            <Footer />
         </>
     );
 }

@@ -32,7 +32,7 @@ function Login() {
     return (
         <>
             <Helmet>
-                <title>Halaman Login</title>
+                <title>Login</title>
             </Helmet>
 
             <Navbar />

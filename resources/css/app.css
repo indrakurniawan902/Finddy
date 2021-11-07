@@ -29,8 +29,16 @@
     @apply text-3xl font-bold text-black-1;
 }
 
+.h3 {
+    @apply text-2xl font-bold text-black-1;
+}
+
 .input {
     @apply mt-2 block px-3 py-2 w-full bg-white-1 border-2 border-white-4 rounded-md focus:border-orange-3 focus:outline-none transition-colors duration-300;
+}
+
+.border-1 {
+    border: 1px solid #8ea3f8;
 }
 
 /* scroll styling */
@@ -44,5 +52,18 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
     @apply bg-orange-1;
+    border-radius: 24px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    @apply bg-blue-1;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: #d1dbff;
     border-radius: 24px;
 }

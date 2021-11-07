@@ -31,7 +31,7 @@ function ForgotPassword() {
     return (
         <>
             <Helmet>
-                <title>Halaman Lupa Password</title>
+                <title>Lupa Password</title>
             </Helmet>
 
             <Navbar />

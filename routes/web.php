@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +15,10 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Home'); //Sesuai dengan nama yang ada di pages
-});
+Route::get('/', [PageController::class, 'index'])->name("home");
+Route::get('/bantuan', [PageController::class, 'bantuan'])->name("home.bantuan");
 
-Route::get('/bantuan', function () {
-    return Inertia::render('Bantuan');
-});
-
+// Route Auth
 Route::get('/login', function () {
     return Inertia::render('Login');
 });
@@ -33,4 +29,25 @@ Route::get('/register', function () {
 
 Route::get('/forgot', function () {
     return Inertia::render('ForgotPassword');
+});
+
+// Route Dashboard
+Route::get('/dashboard', function () {
+    return Inertia::render('dashboard/Dashboard');
+});
+
+Route::get('/user', function () {
+    return Inertia::render('dashboard/Profil');
+});
+
+Route::get('/teman', function () {
+    return Inertia::render('dashboard/TemanBelajar');
+});
+
+Route::get('/profil', function () {
+    return Inertia::render('dashboard/Profil');
+});
+
+Route::get('/forum', function () {
+    return Inertia::render('dashboard/ForumDiskusi');
 });

@@ -30,6 +30,8 @@
         "@inertiajs/inertia": "^0.10.1",
         "@inertiajs/inertia-react": "^0.7.1",
         "aos": "^2.3.4",
-        "react-helmet": "^6.1.0"
+        "react-helmet": "^6.1.0",
+        "simple-react-lightbox": "^3.6.9-0",
+        "sweetalert2": "^11.1.9"
     }
 }

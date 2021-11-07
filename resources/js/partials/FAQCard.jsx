@@ -2,6 +2,7 @@ import { React, useState } from "react";
 
 function FAQCard({ question, answer }) {
     const [isOpen, setIsOpen] = useState(false);
+
     return (
         <div
             className="bg-white-1 w-full rounded-lg px-6 py-4 cursor-pointer overflow-hidden shadow-sm border-0 border-blue-2 border-opacity-40 mb-3"
