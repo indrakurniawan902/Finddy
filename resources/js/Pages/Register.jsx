@@ -4,6 +4,7 @@ import Button from "./../components/Button";
 import { Helmet } from "react-helmet";
 import { Link } from "@inertiajs/inertia-react";
 import AOS from "AOS";
+import { Inertia } from "@inertiajs/inertia";
 
 function Register() {
     useEffect(() => {
@@ -27,7 +28,13 @@ function Register() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Inertia.post("/users", values); tambah controller buat input data
+
+        const formData = new FormData();
+        for (let key in values) {
+            formData.append(key, values[key]);
+        }
+
+        Inertia.post("/register", formData);
     };
 
     return (

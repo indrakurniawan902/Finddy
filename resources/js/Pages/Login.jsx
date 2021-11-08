@@ -4,6 +4,7 @@ import Button from "./../components/Button";
 import { Helmet } from "react-helmet";
 import { Link } from "@inertiajs/inertia-react";
 import AOS from "AOS";
+import { Inertia } from "@inertiajs/inertia";
 
 function Login() {
     useEffect(() => {
@@ -26,7 +27,13 @@ function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Inertia.post("/users", values); tambah controller buat input data
+
+        const formData = new FormData();
+        for (let key in values) {
+            formData.append(key, values[key]);
+        }
+
+        Inertia.post("/login", formData);
     };
 
     return (

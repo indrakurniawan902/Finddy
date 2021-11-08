@@ -21,7 +21,7 @@ Route::get('/bantuan', [PageController::class, 'bantuan'])->name("home.bantuan")
 // Route Auth
 Route::get('/login', function () {
     return Inertia::render('Login');
-});
+})->name('login');
 
 Route::get('/register', function () {
     return Inertia::render('Register');
@@ -32,22 +32,26 @@ Route::get('/forgot', function () {
 });
 
 // Route Dashboard
-Route::get('/dashboard', function () {
-    return Inertia::render('dashboard/Dashboard');
-});
 
-Route::get('/user', function () {
-    return Inertia::render('dashboard/Profil');
-});
 
-Route::get('/teman', function () {
-    return Inertia::render('dashboard/TemanBelajar');
-});
+Route::middleware(['auth'])->group(function () {
+    Route::get('/forum', function () {
+        return Inertia::render('dashboard/ForumDiskusi');
+    });
 
-Route::get('/profil', function () {
-    return Inertia::render('dashboard/Profil');
-});
+    Route::get('/profil', function () {
+        return Inertia::render('dashboard/Profil');
+    });
 
-Route::get('/forum', function () {
-    return Inertia::render('dashboard/ForumDiskusi');
+    Route::get('/dashboard', function () {
+        return Inertia::render('dashboard/Dashboard');
+    });
+
+    Route::get('/user', function () {
+        return Inertia::render('dashboard/Profil');
+    });
+
+    Route::get('/teman', function () {
+        return Inertia::render('dashboard/TemanBelajar');
+    });
 });
