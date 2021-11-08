@@ -5,7 +5,8 @@ import Layout from "../../components/Layout";
 import MotivateCard from "../../components/MotivateCard";
 import StatusCard from "../../partials/StatusCard";
 
-function Dashboard() {
+function Dashboard({ user }) {
+    console.log(user);
     return (
         <Fragment>
             <Helmet>
@@ -54,6 +55,6 @@ function Dashboard() {
     );
 }
 
-Dashboard.layout = (page) => <Layout children={page} />;
+Dashboard.layout = (page) => <Layout children={page} user={page.props.user} />;
 
 export default Dashboard;

@@ -26,6 +26,7 @@ function Login() {
     };
 
     const handleSubmit = (e) => {
+        console.log("haloo");
         e.preventDefault();
 
         const formData = new FormData();

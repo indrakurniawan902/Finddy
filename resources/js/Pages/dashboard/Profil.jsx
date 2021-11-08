@@ -2,7 +2,8 @@ import React, { Fragment } from "react";
 import { Helmet } from "react-helmet";
 import Layout from "../../components/Layout";
 
-function Profil() {
+function Profil({ user }) {
+    console.log(user);
     return (
         <Fragment>
             <Helmet>
@@ -14,6 +15,6 @@ function Profil() {
     );
 }
 
-Profil.layout = (page) => <Layout children={page} />;
+Profil.layout = (page) => <Layout children={page} user={page.props.user} />;
 
 export default Profil;

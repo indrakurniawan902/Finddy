@@ -31,6 +31,10 @@ Route::get('/forgot', function () {
     return Inertia::render('ForgotPassword');
 });
 
+Route::get('/tes', function () {
+    return Inertia::render('EmailVerify');
+});
+
 // Route Dashboard
 
 

@@ -3,8 +3,9 @@ import Navbar from "../components/Navbar";
 import Button from "./../components/Button";
 import { Helmet } from "react-helmet";
 import { Link } from "@inertiajs/inertia-react";
-import AOS from "AOS";
 import { Inertia } from "@inertiajs/inertia";
+import AOS from "AOS";
+import swal from "sweetalert2";
 
 function Register() {
     useEffect(() => {
@@ -12,9 +13,10 @@ function Register() {
     }, []);
 
     const [values, setValues] = useState({
+        username: "riansyh",
         email: "",
         password: "",
-        passwordConfirm: "",
+        password_confirmation: "",
     });
 
     const handleChange = (e) => {
@@ -33,8 +35,11 @@ function Register() {
         for (let key in values) {
             formData.append(key, values[key]);
         }
-
-        Inertia.post("/register", formData);
+        Inertia.post("/register", formData, {
+            onSuccess: () => {
+                swal.fire("Congarts!", "You registered!", "success");
+            },
+        });
     };
 
     return (
@@ -113,9 +118,9 @@ function Register() {
                                 </label>
                                 <input
                                     type="password"
-                                    name="passwordConfirm"
-                                    id="passwordConfirm"
-                                    value={values.passwordConfirm}
+                                    name="password_confirmation"
+                                    id="password_confirmation"
+                                    value={values.password_confirmation}
                                     onChange={handleChange}
                                     className="input mb-8"
                                     placeholder="Masukkan kembali password"

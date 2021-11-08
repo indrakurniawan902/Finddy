@@ -12,16 +12,13 @@ function Button({ children, href, type, isFull, isSubmit, isDisabled }) {
     style += isFull ? "w-full" : "";
 
     return (
-        <Link
+        <button
             className={style}
             type={isSubmit ? "submit" : null}
-            href={href}
             disabled={isDisabled}
-            as="button"
-            type="button"
         >
-            {children}
-        </Link>
+            {href ? <Link href={href}> {children} </Link> : `${children}`}
+        </button>
     );
 }
 

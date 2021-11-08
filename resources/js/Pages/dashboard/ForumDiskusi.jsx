@@ -2,7 +2,8 @@ import React, { Fragment } from "react";
 import { Helmet } from "react-helmet";
 import Layout from "../../components/Layout";
 
-function ForumDiskusi() {
+function ForumDiskusi({ user }) {
+    console.log(user);
     return (
         <Fragment>
             <Helmet>
@@ -16,6 +17,6 @@ function ForumDiskusi() {
     );
 }
 
-ForumDiskusi.layout = (page) => <Layout children={page} />;
+ForumDiskusi.layout = (page) => <Layout children={page} user={page.props.user} />;
 
 export default ForumDiskusi;

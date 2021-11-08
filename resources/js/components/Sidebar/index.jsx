@@ -1,11 +1,11 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React from "react";
 import { Link } from "@inertiajs/inertia-react";
 import { Menus } from "./data";
 import Menu from "./Menu";
 
 const parsePage = (path) => path.split("/");
 
-function Sidebar() {
+function Sidebar({ user }) {
     let pageActive = parsePage(window.location.pathname);
 
     return (
@@ -23,9 +23,9 @@ function Sidebar() {
                         <img src="./img/avatar.png" alt="avatar" />
                     </div>
                     <p className="font-bold text-black-1 text-xl mt-2">
-                        John Doe
+                        {user.nama_lengkap}
                     </p>
-                    <p className="text-black-2 text-sm">UI/UX Designer</p>
+                    <p className="text-black-2 text-sm">{user.bidang_minat}</p>
                 </div>
                 <div className="menu mt-10">
                     {Menus.map((menu, index) => (
@@ -34,6 +34,7 @@ function Sidebar() {
                             href={menu.href}
                             pageActive={`/${pageActive[1]}`}
                             icon={menu.icon}
+                            method={menu.method}
                         >
                             {menu.menu}
                         </Menu>

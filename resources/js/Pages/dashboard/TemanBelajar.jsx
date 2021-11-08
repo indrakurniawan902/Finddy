@@ -2,7 +2,8 @@ import React, { Fragment } from "react";
 import { Helmet } from "react-helmet";
 import Layout from "../../components/Layout";
 
-function TemanBelajar() {
+function TemanBelajar({ user }) {
+    console.log(user);
     return (
         <Fragment>
             <Helmet>
@@ -16,6 +17,6 @@ function TemanBelajar() {
     );
 }
 
-TemanBelajar.layout = (page) => <Layout children={page} />;
+TemanBelajar.layout = (page) => <Layout children={page} user={page.props.user} />;
 
 export default TemanBelajar;
