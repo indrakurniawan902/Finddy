@@ -38,7 +38,7 @@ Route::get('/tes', function () {
 // Route Dashboard
 
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/forum', function () {
         return Inertia::render('dashboard/ForumDiskusi');
     });
