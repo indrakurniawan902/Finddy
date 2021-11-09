@@ -41,6 +41,11 @@
     border: 1px solid #8ea3f8;
 }
 
+.no-scroll {
+    height: 100%;
+    overflow: hidden;
+}
+
 /* scroll styling */
 body::-webkit-scrollbar {
     width: 0.8em;

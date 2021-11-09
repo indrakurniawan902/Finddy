@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import { Link } from "@inertiajs/inertia-react";
 import AOS from "AOS";
 import { Inertia } from "@inertiajs/inertia";
+import Loading from "../components/Loading";
 
 function Login() {
     useEffect(() => {
@@ -15,6 +16,7 @@ function Login() {
         email: "",
         password: "",
     });
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleChange = (e) => {
         const key = e.target.id;
@@ -26,7 +28,6 @@ function Login() {
     };
 
     const handleSubmit = (e) => {
-        console.log("haloo");
         e.preventDefault();
 
         const formData = new FormData();
@@ -34,7 +35,14 @@ function Login() {
             formData.append(key, values[key]);
         }
 
-        Inertia.post("/login", formData);
+        Inertia.post("/login", formData, {
+            onStart: () => {
+                setIsLoading(true);
+            },
+            onSuccess: () => {
+                setIsLoading(false);
+            },
+        });
     };
 
     return (
@@ -42,6 +50,8 @@ function Login() {
             <Helmet>
                 <title>Login</title>
             </Helmet>
+
+            {isLoading && <Loading message="Loading..." />}
 
             <Navbar />
 

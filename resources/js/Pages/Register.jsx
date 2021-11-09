@@ -6,6 +6,7 @@ import { Link } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 import AOS from "AOS";
 import swal from "sweetalert2";
+import Loading from "../components/Loading";
 
 function Register() {
     useEffect(() => {
@@ -18,6 +19,7 @@ function Register() {
         password: "",
         password_confirmation: "",
     });
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleChange = (e) => {
         const key = e.target.id;
@@ -36,8 +38,26 @@ function Register() {
             formData.append(key, values[key]);
         }
         Inertia.post("/register", formData, {
+            onStart: () => {
+                setIsLoading(true);
+            },
             onSuccess: () => {
-                swal.fire("Congarts!", "You registered!", "success");
+                setIsLoading(false);
+                swal.fire({
+                    icon: "success",
+                    title: "Selamat!",
+                    text: "Akun kamu berhasil dibuat.",
+                    confirmButtonColor: "#607EF5",
+                });
+            },
+            onError: () => {
+                setIsLoading(false);
+                swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Terjadi kesalahan, mohon coba lagi",
+                    confirmButtonColor: "#607EF5",
+                });
             },
         });
     };
@@ -48,8 +68,9 @@ function Register() {
                 <title>Daftar Akun</title>
             </Helmet>
 
-            <Navbar />
+            {isLoading && <Loading message="Memproses pendaftaran akun..." />}
 
+            <Navbar />
             <main>
                 <div className="h-screen w-1/2 bg-blue-3 absolute hidden lg:block"></div>
                 <div className="container-auto flex min-h-screen overflow-hidden">
@@ -126,7 +147,12 @@ function Register() {
                                     placeholder="Masukkan kembali password"
                                     required
                                 />
-                                <Button type="primary" isSubmit isFull>
+                                <Button
+                                    type="primary"
+                                    isSubmit
+                                    isFull
+                                    isLoading={isLoading}
+                                >
                                     Buat Akun
                                 </Button>
                             </form>

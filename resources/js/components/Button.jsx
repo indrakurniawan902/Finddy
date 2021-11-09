@@ -1,7 +1,15 @@
 import React from "react";
 import { Link } from "@inertiajs/inertia-react";
 
-function Button({ children, href, type, isFull, isSubmit, isDisabled }) {
+function Button({
+    children,
+    href,
+    type,
+    method,
+    isFull,
+    isSubmit,
+    isDisabled,
+}) {
     let style =
         "rounded-lg font-semibold text-xl transition box-border disabled:opacity-50 disabled:cursor-not-allowed ";
     style +=
@@ -12,13 +20,29 @@ function Button({ children, href, type, isFull, isSubmit, isDisabled }) {
     style += isFull ? "w-full" : "";
 
     return (
-        <button
-            className={style}
-            type={isSubmit ? "submit" : null}
-            disabled={isDisabled}
-        >
-            {href ? <Link href={href}> {children} </Link> : `${children}`}
-        </button>
+        <>
+            {isSubmit ? (
+                <button
+                    className={style}
+                    type={isSubmit ? "submit" : null}
+                    disabled={isDisabled}
+                >
+                    {children}
+                </button>
+            ) : (
+                <Link
+                    className={style}
+                    type={isSubmit ? "submit" : null}
+                    href={href}
+                    disabled={isDisabled}
+                    as="button"
+                    type="button"
+                    method={method}
+                >
+                    {children}
+                </Link>
+            )}
+        </>
     );
 }
 
