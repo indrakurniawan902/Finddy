@@ -4,7 +4,7 @@ import Sidebar from "../Sidebar";
 function Layout({ children, user }) {
     return (
         <Fragment>
-            <div className="flex relative">
+            <div className="flex relative bg-white-2">
                 <div className="sidebar w-1/5 h-screen bg-blue-1 z-10 sticky top-0 overflow-y-scroll">
                     <Sidebar user={user} />
                 </div>

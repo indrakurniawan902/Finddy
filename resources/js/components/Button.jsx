@@ -11,7 +11,7 @@ function Button({
     isDisabled,
 }) {
     let style =
-        "rounded-lg font-semibold text-xl transition box-border disabled:opacity-50 disabled:cursor-not-allowed ";
+        "rounded-lg font-semibold text-lg transition box-border disabled:opacity-50 disabled:cursor-not-allowed ";
     style +=
         type === "primary"
             ? "px-6 py-3 text-white-1 bg-blue-3 shadow-blue hover:bg-blue-4 "

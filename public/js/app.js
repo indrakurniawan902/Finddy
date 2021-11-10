@@ -3097,8 +3097,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Button */ "./resources/js/components/Button.jsx");
-/* harmony import */ var _img_logo_full_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../img/logo-full.svg */ "./resources/img/logo-full.svg");
-/* harmony import */ var _img_email_sent_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../img/email-sent.svg */ "./resources/img/email-sent.svg");
+/* harmony import */ var _img_illustration_email_sent_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../img/illustration/email-sent.svg */ "./resources/img/illustration/email-sent.svg");
+/* harmony import */ var _img_logo_full_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../img/logo-full.svg */ "./resources/img/logo-full.svg");
 /* harmony import */ var _components_Loading__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Loading */ "./resources/js/components/Loading.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
@@ -3172,12 +3172,12 @@ function EmailVerify(props) {
           href: route("home"),
           className: "logo mx-auto h-10 block",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
-            src: _img_logo_full_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
+            src: _img_logo_full_svg__WEBPACK_IMPORTED_MODULE_6__["default"],
             alt: "logo-finddy",
             className: "mx-auto h-full"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
-          src: _img_email_sent_svg__WEBPACK_IMPORTED_MODULE_6__["default"],
+          src: _img_illustration_email_sent_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
           alt: "email sent",
           height: "300px",
           width: "300px"
@@ -3913,7 +3913,7 @@ function Dashboard(_ref) {
       className: "text-3xl font-bold text-black-1 mb-10",
       children: "Dashboard"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_MotivateCard__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
-      className: "h3 mt-10 mb-8",
+      className: "h3 mt-8 mb-6",
       children: "Status"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
       className: "flex gap-2",
@@ -3931,7 +3931,7 @@ function Dashboard(_ref) {
         children: "Diskusiku"
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
-      className: "h3 mt-10 mb-8",
+      className: "h3 mt-8 mb-6",
       children: "Daftar Teman Belajar"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
       className: "flex flex-col gap-3",
@@ -3979,8 +3979,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/es/Helmet.js");
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Layout */ "./resources/js/components/Layout/index.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Button */ "./resources/js/components/Button.jsx");
+/* harmony import */ var _components_Forum_Discussion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Forum/Discussion */ "./resources/js/components/Forum/Discussion.jsx");
+/* harmony import */ var _components_Forum_SearchForum__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Forum/SearchForum */ "./resources/js/components/Forum/SearchForum.jsx");
+/* harmony import */ var _components_Forum_SortBy__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/Forum/SortBy */ "./resources/js/components/Forum/SortBy.jsx");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/Layout */ "./resources/js/components/Layout/index.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
 
 
 
@@ -3990,20 +3998,66 @@ __webpack_require__.r(__webpack_exports__);
 function ForumDiskusi(_ref) {
   var user = _ref.user;
   console.log(user);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_helmet__WEBPACK_IMPORTED_MODULE_1__.Helmet, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("title", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_helmet__WEBPACK_IMPORTED_MODULE_1__.Helmet, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("title", {
         children: "Forum Diskusi"
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
-      className: "text-3xl font-bold text-black-1 mb-10",
-      children: "Forum Diskusi"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      className: "flex justify-between items-center mb-10",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h1", {
+        className: "text-3xl font-bold text-black-1",
+        children: "Forum Diskusi"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "flex gap-6",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          href: route("forum.my"),
+          children: "Diskusiku"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          type: "primary",
+          href: route("forum.create"),
+          children: "Buat Diskusi"
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
+      className: "h3 mb-6",
+      children: "Cari Forum Diskusi"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Forum_SearchForum__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
+      className: "h3 mb-6 mt-8",
+      children: "Daftar Diskusi"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Forum_SortBy__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      className: "flex flex-col gap-4 mt-6",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Forum_Discussion__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        title: "Bagaimana cara berani bertanya saat kuliah berlangsung",
+        discussion: "Jadi aku tuh kaya malu gitu loh buat bertanya ke dosen\r takutnya pertanyaannya terlalu mudah gitu...",
+        author: "arismc2",
+        time: "8 jam yang lalu",
+        totalResponse: "2",
+        authorLink: "#",
+        detailLink: "#"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Forum_Discussion__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        title: "Bagaimana cara berani bertanya saat kuliah berlangsung",
+        discussion: "Jadi aku tuh kaya malu gitu loh buat bertanya ke dosen\r takutnya pertanyaannya terlalu mudah gitu...",
+        author: "arismc2",
+        time: "8 jam yang lalu",
+        totalResponse: "2",
+        authorLink: "#",
+        detailLink: "#"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Forum_Discussion__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        title: "Bagaimana cara berani bertanya saat kuliah berlangsung",
+        discussion: "Jadi aku tuh kaya malu gitu loh buat bertanya ke dosen\r takutnya pertanyaannya terlalu mudah gitu...",
+        author: "arismc2",
+        time: "8 jam yang lalu",
+        totalResponse: "2",
+        authorLink: "#",
+        detailLink: "#"
+      })]
     })]
   });
 }
 
 ForumDiskusi.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_6__["default"], {
     children: page,
     user: page.props.user
   });
@@ -4107,6 +4161,399 @@ TemanBelajar.layout = function (page) {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/dashboard/forum/CreateForum.jsx":
+/*!************************************************************!*\
+  !*** ./resources/js/Pages/dashboard/forum/CreateForum.jsx ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/es/Helmet.js");
+/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/Button */ "./resources/js/components/Button.jsx");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Layout */ "./resources/js/components/Layout/index.jsx");
+/* harmony import */ var _partials_BackButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../partials/BackButton */ "./resources/js/partials/BackButton.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+function CreateForum(_ref) {
+  var user = _ref.user;
+  console.log(user);
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    title: "",
+    body: ""
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      values = _useState2[0],
+      setValues = _useState2[1];
+
+  var handleChange = function handleChange(e) {
+    var key = e.target.id;
+    var value = e.target.value;
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
+    });
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_helmet__WEBPACK_IMPORTED_MODULE_1__.Helmet, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("title", {
+        children: "Forum Diskusi"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      className: "flex justify-between items-center mb-10",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h1", {
+        className: "text-3xl font-bold text-black-1",
+        children: "Forum Diskusi"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_partials_BackButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      href: route("forum")
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+      className: "h3 mt-6 mb-6",
+      children: "Buat Diskusi"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+        htmlFor: "title",
+        className: "block text-xl",
+        children: "Judul Diskusi"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+        type: "text",
+        name: "title",
+        id: "title",
+        value: values.title,
+        onChange: handleChange,
+        className: "input",
+        placeholder: "Masukkan judul atau pertanyaan singkat",
+        required: true
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+        htmlFor: "body",
+        className: "block text-xl mt-4",
+        children: "Pertanyaan lengkap"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
+        rows: "4",
+        name: "body",
+        id: "body",
+        value: values.body,
+        onChange: handleChange,
+        className: "input mb-6",
+        placeholder: "Masukkan pertanyaan lengkapmu di sini",
+        required: true
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        type: "primary",
+        isSubmit: true,
+        children: "Buat Diskusi"
+      })]
+    })]
+  });
+}
+
+CreateForum.layout = function (page) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    children: page,
+    user: page.props.user
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CreateForum);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/dashboard/forum/DetailsForum.jsx":
+/*!*************************************************************!*\
+  !*** ./resources/js/Pages/dashboard/forum/DetailsForum.jsx ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/es/Helmet.js");
+/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/Button */ "./resources/js/components/Button.jsx");
+/* harmony import */ var _components_Forum_Discussion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Forum/Discussion */ "./resources/js/components/Forum/Discussion.jsx");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/Layout */ "./resources/js/components/Layout/index.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+function DetailsForum(_ref) {
+  var user = _ref.user;
+  console.log(user);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_helmet__WEBPACK_IMPORTED_MODULE_1__.Helmet, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("title", {
+        children: "Forum Diskusi"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      className: "flex justify-between items-center mb-10",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h1", {
+        className: "text-3xl font-bold text-black-1",
+        children: "Forum Diskusi"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "flex gap-6",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          href: route("forum.my"),
+          children: "Diskusiku"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          type: "primary",
+          href: route("forum.create"),
+          children: "Buat Diskusi"
+        })]
+      })]
+    })]
+  });
+}
+
+DetailsForum.layout = function (page) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    children: page,
+    user: page.props.user
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DetailsForum);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/dashboard/forum/EditForum.jsx":
+/*!**********************************************************!*\
+  !*** ./resources/js/Pages/dashboard/forum/EditForum.jsx ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/es/Helmet.js");
+/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/Button */ "./resources/js/components/Button.jsx");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Layout */ "./resources/js/components/Layout/index.jsx");
+/* harmony import */ var _partials_BackButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../partials/BackButton */ "./resources/js/partials/BackButton.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+function EditForum(_ref) {
+  var user = _ref.user;
+  console.log(user);
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    title: "",
+    body: ""
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      values = _useState2[0],
+      setValues = _useState2[1];
+
+  var handleChange = function handleChange(e) {
+    var key = e.target.id;
+    var value = e.target.value;
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
+    });
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_helmet__WEBPACK_IMPORTED_MODULE_1__.Helmet, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("title", {
+        children: "Forum Diskusi"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      className: "flex justify-between items-center mb-10",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h1", {
+        className: "text-3xl font-bold text-black-1",
+        children: "Forum Diskusi"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_partials_BackButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      href: route("forum")
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+      className: "h3 mt-6 mb-6",
+      children: "Edit Diskusi"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+        htmlFor: "title",
+        className: "block text-xl",
+        children: "Judul Diskusi"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+        type: "text",
+        name: "title",
+        id: "title",
+        value: values.title,
+        onChange: handleChange,
+        className: "input",
+        placeholder: "Masukkan judul atau pertanyaan singkat",
+        required: true
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+        htmlFor: "body",
+        className: "block text-xl mt-4",
+        children: "Pertanyaan lengkap"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
+        rows: "4",
+        name: "body",
+        id: "body",
+        value: values.body,
+        onChange: handleChange,
+        className: "input mb-6",
+        placeholder: "Masukkan pertanyaan lengkapmu di sini",
+        required: true
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        type: "primary",
+        isSubmit: true,
+        children: "Simpan Perubahan"
+      })]
+    })]
+  });
+}
+
+EditForum.layout = function (page) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    children: page,
+    user: page.props.user
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (EditForum);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/dashboard/forum/MyForum.jsx":
+/*!********************************************************!*\
+  !*** ./resources/js/Pages/dashboard/forum/MyForum.jsx ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/es/Helmet.js");
+/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/Button */ "./resources/js/components/Button.jsx");
+/* harmony import */ var _components_Forum_Discussion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Forum/Discussion */ "./resources/js/components/Forum/Discussion.jsx");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/Layout */ "./resources/js/components/Layout/index.jsx");
+/* harmony import */ var _partials_BackButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../partials/BackButton */ "./resources/js/partials/BackButton.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+
+function MyForum(_ref) {
+  var user = _ref.user;
+  console.log(user);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_helmet__WEBPACK_IMPORTED_MODULE_1__.Helmet, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("title", {
+        children: "Forum Diskusi"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      className: "flex justify-between items-center mb-10",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
+        className: "text-3xl font-bold text-black-1",
+        children: "Forum Diskusi"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        className: "flex gap-6",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          type: "primary",
+          href: route("forum.create"),
+          children: "Buat Diskusi"
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_partials_BackButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      href: route("forum")
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h2", {
+      className: "h3 mt-6 mb-6",
+      children: "Diskusiku"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Forum_Discussion__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      title: "Bagaimana cara berani bertanya saat kuliah berlangsung",
+      discussion: "Jadi aku tuh kaya malu gitu loh buat bertanya ke dosen\r takutnya pertanyaannya terlalu mudah gitu...",
+      author: "arismc2",
+      time: "8 jam yang lalu",
+      totalResponse: "2",
+      authorLink: "#",
+      detailLink: "#",
+      isEditable: true
+    })]
+  });
+}
+
+MyForum.layout = function (page) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    children: page,
+    user: page.props.user
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyForum);
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -4187,7 +4634,7 @@ function Button(_ref) {
       isFull = _ref.isFull,
       isSubmit = _ref.isSubmit,
       isDisabled = _ref.isDisabled;
-  var style = "rounded-lg font-semibold text-xl transition box-border disabled:opacity-50 disabled:cursor-not-allowed ";
+  var style = "rounded-lg font-semibold text-lg transition box-border disabled:opacity-50 disabled:cursor-not-allowed ";
   style += type === "primary" ? "px-6 py-3 text-white-1 bg-blue-3 shadow-blue hover:bg-blue-4 " : "px-5 py-2 text-blue-3 border-4 border-blue-3 hover:border-blue-4 hover:bg-blue-1 ";
   style += isFull ? "w-full" : "";
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
@@ -4321,6 +4768,209 @@ function Footer() {
 
 /***/ }),
 
+/***/ "./resources/js/components/Forum/Discussion.jsx":
+/*!******************************************************!*\
+  !*** ./resources/js/components/Forum/Discussion.jsx ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _img_icon_person_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../img/icon/person.svg */ "./resources/img/icon/person.svg");
+/* harmony import */ var _img_icon_calendar_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../img/icon/calendar.svg */ "./resources/img/icon/calendar.svg");
+/* harmony import */ var _img_icon_response_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../img/icon/response.svg */ "./resources/img/icon/response.svg");
+/* harmony import */ var _img_icon_edit_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../img/icon/edit.svg */ "./resources/img/icon/edit.svg");
+/* harmony import */ var _img_icon_trash_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../img/icon/trash.svg */ "./resources/img/icon/trash.svg");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+
+
+function Discussion(_ref) {
+  var title = _ref.title,
+      discussion = _ref.discussion,
+      author = _ref.author,
+      time = _ref.time,
+      totalResponse = _ref.totalResponse,
+      detailLink = _ref.detailLink,
+      authorLink = _ref.authorLink,
+      isEditable = _ref.isEditable;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+    className: "py-3 px-5 flex flex-col gap-4 rounded-lg w-3/4 shadow-md",
+    "aria-label": "discussion card",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      className: "flex justify-between items-center",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
+        className: "text-blue-3 font-bold text-base hover:text-blue-4",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
+          href: detailLink,
+          children: title
+        })
+      }), isEditable ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "flex gap-3 items-center",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+          className: "text-xs",
+          children: "Status"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
+          href: "#",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+            src: _img_icon_edit_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
+            height: "20px",
+            width: "20px",
+            alt: "edit icon"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
+          href: "#",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+            src: _img_icon_trash_svg__WEBPACK_IMPORTED_MODULE_6__["default"],
+            height: "20px",
+            width: "20px",
+            alt: "delete icon"
+          })
+        })]
+      }) : ""]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+      className: "text-black-2 text-sm",
+      children: discussion
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      className: "flex gap-8 items-center justify-start",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "flex gap-2 items-center justify-start",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+          src: _img_icon_person_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
+          alt: "person icon",
+          height: "24px",
+          width: "24px",
+          "aria-label": "person icon"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+          className: "text-orange-3 font-bold text-xs hover:text-orange-4",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
+            href: authorLink,
+            children: author
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "flex gap-2 items-center justify-start",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+          src: _img_icon_calendar_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
+          alt: "calendar icon",
+          height: "24px",
+          width: "24px",
+          "aria-label": "person icon"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+          className: "text-orange-3 font-bold text-xs",
+          children: time
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "flex gap-2 items-center justify-start",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+          src: _img_icon_response_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
+          alt: "response icon",
+          height: "24px",
+          width: "24px",
+          "aria-label": "person icon"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("p", {
+          className: "text-orange-3 font-bold text-xs",
+          children: [totalResponse, " tanggapan"]
+        })]
+      })]
+    })]
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Discussion);
+
+/***/ }),
+
+/***/ "./resources/js/components/Forum/SearchForum.jsx":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/Forum/SearchForum.jsx ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Button */ "./resources/js/components/Button.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+function SearchForum() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
+    className: "flex gap-5",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+      type: "text",
+      className: "input-2 flex-grow"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      type: "primary",
+      children: "Cari Diskusi"
+    })]
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SearchForum);
+
+/***/ }),
+
+/***/ "./resources/js/components/Forum/SortBy.jsx":
+/*!**************************************************!*\
+  !*** ./resources/js/components/Forum/SortBy.jsx ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function SortBy() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "flex flex-col gap-1",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+      className: "text-base text-black-1",
+      children: "Urut berdasarkan"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("select", {
+      name: "sort-by",
+      id: "sort",
+      className: "bg-blue-3 text-white-1 py-2 px-3 rounded-md w-56 focus:outline-none border-4 border-blue-3 focus:border-blue-2 transition-all duration-500",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+        value: "time",
+        children: "Waktu dibuat"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+        value: "response",
+        children: "Jumlah response"
+      })]
+    })]
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SortBy);
+
+/***/ }),
+
 /***/ "./resources/js/components/Friend.jsx":
 /*!********************************************!*\
   !*** ./resources/js/components/Friend.jsx ***!
@@ -4403,7 +5053,7 @@ function Layout(_ref) {
       user = _ref.user;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "flex relative",
+      className: "flex relative bg-white-2",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "sidebar w-1/5 h-screen bg-blue-1 z-10 sticky top-0 overflow-y-scroll",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -4678,7 +5328,8 @@ function Menu(_ref) {
   var children = _ref.children,
       href = _ref.href,
       pageActive = _ref.pageActive,
-      icon = _ref.icon,
+      iconDark = _ref.iconDark,
+      iconLight = _ref.iconLight,
       method = _ref.method;
   var styles = {
     menu: "px-6 py-3 rounded-md text-black-2 my-2 transition-all hover:bg-white-1",
@@ -4693,7 +5344,7 @@ function Menu(_ref) {
       type: "button",
       method: method,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-        src: pageActive === href ? "".concat(icon, "-white.svg") : "".concat(icon, "-dark.svg")
+        src: pageActive === href ? iconLight : iconDark
       }), children]
     })
   });
@@ -4714,30 +5365,55 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Menus": () => (/* binding */ Menus)
 /* harmony export */ });
+/* harmony import */ var _img_icon_dashboard_dark_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../img/icon/dashboard-dark.svg */ "./resources/img/icon/dashboard-dark.svg");
+/* harmony import */ var _img_icon_dashboard_white_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../img/icon/dashboard-white.svg */ "./resources/img/icon/dashboard-white.svg");
+/* harmony import */ var _img_icon_teman_dark_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../img/icon/teman-dark.svg */ "./resources/img/icon/teman-dark.svg");
+/* harmony import */ var _img_icon_teman_white_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../img/icon/teman-white.svg */ "./resources/img/icon/teman-white.svg");
+/* harmony import */ var _img_icon_forum_dark_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../img/icon/forum-dark.svg */ "./resources/img/icon/forum-dark.svg");
+/* harmony import */ var _img_icon_forum_white_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../img/icon/forum-white.svg */ "./resources/img/icon/forum-white.svg");
+/* harmony import */ var _img_icon_logout_dark_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../img/icon/logout-dark.svg */ "./resources/img/icon/logout-dark.svg");
+/* harmony import */ var _img_icon_logout_white_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../img/icon/logout-white.svg */ "./resources/img/icon/logout-white.svg");
+/* harmony import */ var _img_icon_profil_dark_svg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../img/icon/profil-dark.svg */ "./resources/img/icon/profil-dark.svg");
+/* harmony import */ var _img_icon_profil_white_svg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../img/icon/profil-white.svg */ "./resources/img/icon/profil-white.svg");
+
+
+
+
+
+
+
+
+
+
 var Menus = [{
   menu: "Dashboard",
   href: "/dashboard",
-  icon: "./img/icon/dashboard",
+  iconDark: _img_icon_dashboard_dark_svg__WEBPACK_IMPORTED_MODULE_0__["default"],
+  iconLight: _img_icon_dashboard_white_svg__WEBPACK_IMPORTED_MODULE_1__["default"],
   method: "get"
 }, {
   menu: "Teman Belajar",
   href: "/teman",
-  icon: "./img/icon/teman",
+  iconDark: _img_icon_teman_dark_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
+  iconLight: _img_icon_teman_white_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
   method: "get"
 }, {
   menu: "Forum Diskusi",
   href: "/forum",
-  icon: "./img/icon/forum",
+  iconDark: _img_icon_forum_dark_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
+  iconLight: _img_icon_forum_white_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
   method: "get"
 }, {
   menu: "Profil",
   href: "/user",
-  icon: "./img/icon/profil",
+  iconDark: _img_icon_profil_dark_svg__WEBPACK_IMPORTED_MODULE_8__["default"],
+  iconLight: _img_icon_profil_white_svg__WEBPACK_IMPORTED_MODULE_9__["default"],
   method: "get"
 }, {
   menu: "Logout",
   href: "/logout",
-  icon: "./img/icon/logout",
+  iconDark: _img_icon_logout_dark_svg__WEBPACK_IMPORTED_MODULE_6__["default"],
+  iconLight: _img_icon_logout_white_svg__WEBPACK_IMPORTED_MODULE_7__["default"],
   method: "post"
 }];
 
@@ -4758,7 +5434,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data */ "./resources/js/components/Sidebar/data.js");
 /* harmony import */ var _Menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Menu */ "./resources/js/components/Sidebar/Menu.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _img_logo_full_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../img/logo-full.svg */ "./resources/img/logo-full.svg");
+/* harmony import */ var _img_avatar_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../img/avatar.png */ "./resources/img/avatar.png");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
 
 
 
@@ -4774,39 +5454,40 @@ var parsePage = function parsePage(path) {
 function Sidebar(_ref) {
   var user = _ref.user;
   var pageActive = parsePage(window.location.pathname);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("aside", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("aside", {
       className: "py-7 px-8 w-full",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
         href: route("home"),
         className: "logo mx-auto h-8 block",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-          src: "./img/logo-full.svg",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+          src: _img_logo_full_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
           alt: "logo-finddy",
           className: "mx-auto h-full"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
         className: "profil mt-9 text-center",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
           className: "img w-24 h-24 rounded-full overflow-hidden bg-blue-2 mx-auto",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-            src: "./img/avatar.png",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+            src: _img_avatar_png__WEBPACK_IMPORTED_MODULE_5__["default"],
             alt: "avatar"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
           className: "font-bold text-black-1 text-xl mt-2",
           children: user.nama_lengkap
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
           className: "text-black-2 text-sm",
           children: user.bidang_minat
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "menu mt-10",
         children: _data__WEBPACK_IMPORTED_MODULE_2__.Menus.map(function (menu, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Menu__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Menu__WEBPACK_IMPORTED_MODULE_3__["default"], {
             href: menu.href,
             pageActive: "/".concat(pageActive[1]),
-            icon: menu.icon,
+            iconDark: menu.iconDark,
+            iconLight: menu.iconLight,
             method: menu.method,
             children: menu.menu
           }, index);
@@ -4852,6 +5533,48 @@ var faqs = [{
   question: "Berapa banyak bidang yang dapat dipilih oleh setiap pengguna?",
   answer: "Untuk sekarang setiap pengguna hanya bisa memilih satu bidang saja"
 }];
+
+/***/ }),
+
+/***/ "./resources/js/partials/BackButton.jsx":
+/*!**********************************************!*\
+  !*** ./resources/js/partials/BackButton.jsx ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _img_icon_arrow_left_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../img/icon/arrow-left.svg */ "./resources/img/icon/arrow-left.svg");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+function BackButton(_ref) {
+  var href = _ref.href;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
+    href: href,
+    className: "flex gap-1 items-center",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+      src: _img_icon_arrow_left_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
+      height: "24px",
+      width: "24px",
+      alt: "arrow left icon"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+      className: "text-black-1 font-semibold hover:text-blue-3",
+      children: "Kembali"
+    })]
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BackButton);
 
 /***/ }),
 
@@ -5259,10 +5982,265 @@ module.exports = deepmerge_1;
 
 /***/ }),
 
-/***/ "./resources/img/email-sent.svg":
+/***/ "./resources/img/avatar.png":
+/*!**********************************!*\
+  !*** ./resources/img/avatar.png ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/avatar.png?143777e418abaad118e695a9ce357b84");
+
+/***/ }),
+
+/***/ "./resources/img/icon/arrow-left.svg":
+/*!*******************************************!*\
+  !*** ./resources/img/icon/arrow-left.svg ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/arrow-left.svg?b80d8de32d6d7cd72426fa06470e06ff");
+
+/***/ }),
+
+/***/ "./resources/img/icon/calendar.svg":
+/*!*****************************************!*\
+  !*** ./resources/img/icon/calendar.svg ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/calendar.svg?0c646f744d2b94802f904c59175fa16f");
+
+/***/ }),
+
+/***/ "./resources/img/icon/dashboard-dark.svg":
+/*!***********************************************!*\
+  !*** ./resources/img/icon/dashboard-dark.svg ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/dashboard-dark.svg?bc057e415924eb77726a007981b92b57");
+
+/***/ }),
+
+/***/ "./resources/img/icon/dashboard-white.svg":
+/*!************************************************!*\
+  !*** ./resources/img/icon/dashboard-white.svg ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/dashboard-white.svg?02496c10e547979c2cd44190a68a6e57");
+
+/***/ }),
+
+/***/ "./resources/img/icon/edit.svg":
+/*!*************************************!*\
+  !*** ./resources/img/icon/edit.svg ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/edit.svg?ab62a0ce7820fcc2b8e384bb23da43e1");
+
+/***/ }),
+
+/***/ "./resources/img/icon/forum-dark.svg":
+/*!*******************************************!*\
+  !*** ./resources/img/icon/forum-dark.svg ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/forum-dark.svg?b4c30b94956ff8bb5cbf46255b08a4d7");
+
+/***/ }),
+
+/***/ "./resources/img/icon/forum-white.svg":
+/*!********************************************!*\
+  !*** ./resources/img/icon/forum-white.svg ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/forum-white.svg?672b4db00c352a9329ffc1b4267e4cbb");
+
+/***/ }),
+
+/***/ "./resources/img/icon/logout-dark.svg":
+/*!********************************************!*\
+  !*** ./resources/img/icon/logout-dark.svg ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/logout-dark.svg?9f4afd12ab9699b9c76f3feac6f0dcc8");
+
+/***/ }),
+
+/***/ "./resources/img/icon/logout-white.svg":
+/*!*********************************************!*\
+  !*** ./resources/img/icon/logout-white.svg ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/logout-white.svg?15f3c4c43be9784c666836dbba14735d");
+
+/***/ }),
+
+/***/ "./resources/img/icon/person.svg":
+/*!***************************************!*\
+  !*** ./resources/img/icon/person.svg ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/person.svg?d0e20bcaa88b70db0dfe55a523f7ba21");
+
+/***/ }),
+
+/***/ "./resources/img/icon/profil-dark.svg":
+/*!********************************************!*\
+  !*** ./resources/img/icon/profil-dark.svg ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/profil-dark.svg?f642cddf0226576835bd34bfd5d7f2f8");
+
+/***/ }),
+
+/***/ "./resources/img/icon/profil-white.svg":
+/*!*********************************************!*\
+  !*** ./resources/img/icon/profil-white.svg ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/profil-white.svg?1f3b345dcaa056ebc36e468c79b0fed8");
+
+/***/ }),
+
+/***/ "./resources/img/icon/response.svg":
+/*!*****************************************!*\
+  !*** ./resources/img/icon/response.svg ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/response.svg?1ac5f0825ce38d1161f5f266f6186e8e");
+
+/***/ }),
+
+/***/ "./resources/img/icon/teman-dark.svg":
+/*!*******************************************!*\
+  !*** ./resources/img/icon/teman-dark.svg ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/teman-dark.svg?5ce35c6aa0d31534db09266d35d47b0c");
+
+/***/ }),
+
+/***/ "./resources/img/icon/teman-white.svg":
+/*!********************************************!*\
+  !*** ./resources/img/icon/teman-white.svg ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/teman-white.svg?e3a585fa6bb292db293da7ae360f1e91");
+
+/***/ }),
+
+/***/ "./resources/img/icon/trash.svg":
 /*!**************************************!*\
-  !*** ./resources/img/email-sent.svg ***!
+  !*** ./resources/img/icon/trash.svg ***!
   \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/trash.svg?67023d970cc02dde9c77c6195d8a573a");
+
+/***/ }),
+
+/***/ "./resources/img/illustration/email-sent.svg":
+/*!***************************************************!*\
+  !*** ./resources/img/illustration/email-sent.svg ***!
+  \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -44955,7 +45933,15 @@ var map = {
 	"./dashboard/Profil": "./resources/js/Pages/dashboard/Profil.jsx",
 	"./dashboard/Profil.jsx": "./resources/js/Pages/dashboard/Profil.jsx",
 	"./dashboard/TemanBelajar": "./resources/js/Pages/dashboard/TemanBelajar.jsx",
-	"./dashboard/TemanBelajar.jsx": "./resources/js/Pages/dashboard/TemanBelajar.jsx"
+	"./dashboard/TemanBelajar.jsx": "./resources/js/Pages/dashboard/TemanBelajar.jsx",
+	"./dashboard/forum/CreateForum": "./resources/js/Pages/dashboard/forum/CreateForum.jsx",
+	"./dashboard/forum/CreateForum.jsx": "./resources/js/Pages/dashboard/forum/CreateForum.jsx",
+	"./dashboard/forum/DetailsForum": "./resources/js/Pages/dashboard/forum/DetailsForum.jsx",
+	"./dashboard/forum/DetailsForum.jsx": "./resources/js/Pages/dashboard/forum/DetailsForum.jsx",
+	"./dashboard/forum/EditForum": "./resources/js/Pages/dashboard/forum/EditForum.jsx",
+	"./dashboard/forum/EditForum.jsx": "./resources/js/Pages/dashboard/forum/EditForum.jsx",
+	"./dashboard/forum/MyForum": "./resources/js/Pages/dashboard/forum/MyForum.jsx",
+	"./dashboard/forum/MyForum.jsx": "./resources/js/Pages/dashboard/forum/MyForum.jsx"
 };
 
 

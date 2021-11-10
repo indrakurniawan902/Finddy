@@ -3,8 +3,8 @@ import { Link } from "@inertiajs/inertia-react";
 import React, { useState } from "react";
 import swal from "sweetalert2";
 import Button from "../components/Button";
+import email_sent from "../../img/illustration/email-sent.svg";
 import logo from "../../img/logo-full.svg";
-import email_sent from "../../img/email-sent.svg";
 import Loading from "../components/Loading";
 
 function EmailVerify(props) {

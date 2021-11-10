@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "@inertiajs/inertia-react";
 
-function Menu({ children, href, pageActive, icon, method }) {
+function Menu({ children, href, pageActive, iconDark, iconLight, method }) {
     const styles = {
         menu: "px-6 py-3 rounded-md text-black-2 my-2 transition-all hover:bg-white-1",
         active_menu:
@@ -17,13 +17,7 @@ function Menu({ children, href, pageActive, icon, method }) {
                 type="button"
                 method={method}
             >
-                <img
-                    src={
-                        pageActive === href
-                            ? `${icon}-white.svg`
-                            : `${icon}-dark.svg`
-                    }
-                ></img>
+                <img src={pageActive === href ? iconLight : iconDark}></img>
                 {children}
             </Link>
         </div>

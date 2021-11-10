@@ -16,7 +16,7 @@ function Dashboard({ user }) {
             <h1 className="text-3xl font-bold text-black-1 mb-10">Dashboard</h1>
             <MotivateCard />
 
-            <h3 className="h3 mt-10 mb-8">Status</h3>
+            <h3 className="h3 mt-8 mb-6">Status</h3>
 
             <div className="flex gap-2">
                 <StatusCard number="12" href="#">
@@ -30,7 +30,7 @@ function Dashboard({ user }) {
                 </StatusCard>
             </div>
 
-            <h3 className="h3 mt-10 mb-8">Daftar Teman Belajar</h3>
+            <h3 className="h3 mt-8 mb-6">Daftar Teman Belajar</h3>
             <div className="flex flex-col gap-3">
                 <Friend
                     name="John Siregar"

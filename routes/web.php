@@ -39,9 +39,6 @@ Route::get('/tes', function () {
 
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/forum', function () {
-        return Inertia::render('dashboard/ForumDiskusi');
-    });
 
     Route::get('/profil', function () {
         return Inertia::render('dashboard/Profil');
@@ -58,4 +55,21 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/teman', function () {
         return Inertia::render('dashboard/TemanBelajar');
     });
+
+    // route sementara forum diskusi
+    Route::get('/forum', function () {
+        return Inertia::render('dashboard/ForumDiskusi');
+    })->name('forum');
+    Route::get('/forum/details', function () {
+        return Inertia::render('dashboard/forum/DetailsForum');
+    })->name('forum.detail');
+    Route::get('/forum/edit', function () {
+        return Inertia::render('dashboard/forum/EditForum');
+    })->name('forum.edit');
+    Route::get('/forum/create', function () {
+        return Inertia::render('dashboard/forum/CreateForum');
+    })->name('forum.create');
+    Route::get('/forum/my', function () {
+        return Inertia::render('dashboard/forum/MyForum');
+    })->name('forum.my');
 });

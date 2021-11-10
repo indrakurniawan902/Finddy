@@ -21816,6 +21816,42 @@ video {
   transition-duration: 300ms;
 }
 
+.input-2 {
+  display: block;
+  border-radius: 0.5rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgba(142, 163, 248, var(--tw-border-opacity));
+}
+
+.input-2:focus {
+  --tw-border-opacity: 1;
+  border-color: rgba(90, 118, 230, var(--tw-border-opacity));
+}
+
+.input-2 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  --tw-shadow: 0px 15px 44px -361px rgba(29, 185, 135, 0.13);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.input-2:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.input-2 {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-duration: 300ms;
+}
+
 .border-1 {
   border: 1px solid #8ea3f8;
 }
