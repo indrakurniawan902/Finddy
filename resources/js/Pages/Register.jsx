@@ -8,7 +8,7 @@ import AOS from "AOS";
 import swal from "sweetalert2";
 import Loading from "../components/Loading";
 
-function Register() {
+function Register({ user }) {
     useEffect(() => {
         AOS.init();
     }, []);
@@ -70,7 +70,7 @@ function Register() {
 
             {isLoading && <Loading message="Memproses pendaftaran akun..." />}
 
-            <Navbar />
+            <Navbar user={user} />
             <main>
                 <div className="h-screen w-1/2 bg-blue-3 absolute hidden lg:block"></div>
                 <div className="container-auto flex min-h-screen overflow-hidden">

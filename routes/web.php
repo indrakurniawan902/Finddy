@@ -25,36 +25,27 @@ Route::get('/login', function () {
 
 Route::get('/register', function () {
     return Inertia::render('Register');
-});
+})->name("register");
 
 Route::get('/forgot', function () {
     return Inertia::render('ForgotPassword');
-});
-
-Route::get('/tes', function () {
-    return Inertia::render('EmailVerify');
-});
+})->name("forgot.password");
 
 // Route Dashboard
 
-
 Route::middleware(['auth', 'verified'])->group(function () {
-
-    Route::get('/profil', function () {
-        return Inertia::render('dashboard/Profil');
-    });
 
     Route::get('/dashboard', function () {
         return Inertia::render('dashboard/Dashboard');
-    });
+    })->name("dashboard");
 
     Route::get('/user', function () {
         return Inertia::render('dashboard/Profil');
-    });
+    })->name("profil");
 
     Route::get('/teman', function () {
         return Inertia::render('dashboard/TemanBelajar');
-    });
+    })->name("teman");
 
     // route sementara forum diskusi
     Route::get('/forum', function () {

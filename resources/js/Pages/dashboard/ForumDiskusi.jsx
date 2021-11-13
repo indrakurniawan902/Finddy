@@ -14,11 +14,11 @@ function ForumDiskusi({ user }) {
                 <title>Forum Diskusi</title>
             </Helmet>
 
-            <div className="flex justify-between items-center mb-10">
-                <h1 className="text-3xl font-bold text-black-1">
+            <div className="flex flex-wrap justify-center md:justify-between items-center mb-10">
+                <h1 className="text-3xl font-bold text-black-1 w-full md:w-auto text-left">
                     Forum Diskusi
                 </h1>
-                <div className="flex gap-6">
+                <div className="flex gap-6 mt-6 md:mt-0">
                     <Button href={route("forum.my")}>Diskusiku</Button>
                     <Button type="primary" href={route("forum.create")}>
                         Buat Diskusi
@@ -30,7 +30,7 @@ function ForumDiskusi({ user }) {
             <SearchForum />
             <h2 className="h3 mb-6 mt-8">Daftar Diskusi</h2>
             <SortBy></SortBy>
-            <div className="flex flex-col gap-4 mt-6">
+            <div className="flex flex-col gap-5 mt-6">
                 <Discussion
                     title="Bagaimana cara berani bertanya saat kuliah berlangsung"
                     discussion="Jadi aku tuh kaya malu gitu loh buat bertanya ke dosen

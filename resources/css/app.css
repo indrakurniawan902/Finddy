@@ -34,11 +34,11 @@
 }
 
 .input {
-    @apply mt-2 block px-3 py-2 w-full bg-white-1 border-2 border-white-4 rounded-md focus:border-orange-3 focus:outline-none transition-colors duration-300;
+    @apply mt-2 block px-3 py-2 w-full bg-white-1 border-2 border-white-4 rounded-md focus:shadow-outlineOrange focus:outline-none transition-shadow duration-300;
 }
 
 .input-2 {
-    @apply block px-3 py-2 bg-white-1 rounded-lg border-2 border-blue-2 focus:border-blue-4 shadow-blue focus:outline-none transition-colors duration-300;
+    @apply block px-3 py-2 bg-white-1 rounded-lg border-2 border-blue-2 focus:shadow-outlineBlue focus:outline-none transition-shadow duration-300;
 }
 
 .border-1 {

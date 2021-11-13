@@ -45,9 +45,12 @@ module.exports = {
             },
         },
         boxShadow: {
-            sm: "0px 14px 22px -6px rgba(94, 94, 94, 0.08)",
-            md: "0px 10px 34px -6px rgba(130, 130, 130, 0.1)",
+            sm: "0 14px 22px -6px rgba(94, 94, 94, 0.08)",
+            md: "0 10px 34px -6px rgba(130, 130, 130, 0.1)",
+            up: "0 6px 40px -6px rgba(130, 130, 130, 0.22)",
             blue: "0px 15px 44px -361px rgba(29, 185, 135, 0.13)",
+            outlineOrange: "0 0 0 3px rgba(251, 195, 141, 0.5)",
+            outlineBlue: "0 0 0 3px rgba(142, 163, 248, 0.5)",
         },
         fontFamily: {
             sans: ["Mulish", "sans-serif"],

@@ -7,7 +7,7 @@ import AOS from "AOS";
 import { Inertia } from "@inertiajs/inertia";
 import Loading from "../components/Loading";
 
-function Login() {
+function Login({ user }) {
     useEffect(() => {
         AOS.init();
     }, []);
@@ -53,7 +53,7 @@ function Login() {
 
             {isLoading && <Loading message="Loading..." />}
 
-            <Navbar />
+            <Navbar user={user} />
 
             <main>
                 <div className="h-screen w-1/2 bg-blue-3 absolute hidden lg:block"></div>

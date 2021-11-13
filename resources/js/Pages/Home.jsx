@@ -6,7 +6,7 @@ import Button from "./../components/Button";
 import { Helmet } from "react-helmet";
 import AOS from "AOS";
 
-function Home() {
+function Home({ user }) {
     useEffect(() => {
         AOS.init();
     }, []);
@@ -17,7 +17,7 @@ function Home() {
                 <title>Finddy - Find Your Buddy to Boost Your Study</title>
             </Helmet>
 
-            <Navbar />
+            <Navbar user={user} />
             <main>
                 <div className="hero bg-blue-1">
                     <div
@@ -36,7 +36,14 @@ function Home() {
                             <p className="text-black-2 text-xl mt-4 mb-8">
                                 Temukan teman belajarmu dengan aplikasi Finddy
                             </p>
-                            <Button type="primary" href="/register">
+                            <Button
+                                type="primary"
+                                href={
+                                    user
+                                        ? route("dashboard")
+                                        : route("register")
+                                }
+                            >
                                 Mulai Perjalananku
                             </Button>
                         </div>

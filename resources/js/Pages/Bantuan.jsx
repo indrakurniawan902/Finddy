@@ -7,7 +7,7 @@ import FAQCard from "../partials/FAQCard";
 import { faqs } from "../data/faq-data";
 import AOS from "AOS";
 
-function Bantuan() {
+function Bantuan({ user }) {
     useEffect(() => {
         AOS.init();
     }, []);
@@ -18,7 +18,7 @@ function Bantuan() {
                 <title>Bantuan</title>
             </Helmet>
 
-            <Navbar />
+            <Navbar user={user} />
             <main>
                 <div className="flex flex-col container-auto gap-10 justify-center py-10 px-6 lg:px-0">
                     <div data-aos="fade-up" data-aos-duration="800">

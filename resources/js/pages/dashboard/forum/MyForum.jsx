@@ -17,11 +17,6 @@ function MyForum({ user }) {
                 <h1 className="text-3xl font-bold text-black-1">
                     Forum Diskusi
                 </h1>
-                <div className="flex gap-6">
-                    <Button type="primary" href={route("forum.create")}>
-                        Buat Diskusi
-                    </Button>
-                </div>
             </div>
             <BackButton href={route("forum")}></BackButton>
             <h2 className="h3 mt-6 mb-6">Diskusiku</h2>

@@ -18,7 +18,7 @@ function Dashboard({ user }) {
 
             <h3 className="h3 mt-8 mb-6">Status</h3>
 
-            <div className="flex gap-2">
+            <div className="flex gap-3 flex-wrap justify-center md:justify-start">
                 <StatusCard number="12" href="#">
                     Teman Belajar
                 </StatusCard>
