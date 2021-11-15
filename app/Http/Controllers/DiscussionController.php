@@ -26,8 +26,8 @@ class DiscussionController extends Controller
                     'id' => $discussion->id,
                     'title' => $discussion->title,
                     'body' => $discussion->body,
-                    // 'time' => $discussion->a,
-                    // 'author' => $discussion-> user -> nama_lengkap,
+                    'time' => $discussion->created_at->diffForHumans(),
+                    'author' => $discussion->user->username,
                     // 'totalResponse' => $discussion->a,
                     // 'authorLink' => $discussion->a,
                     // 'detailLink' => $discussion->a,
@@ -82,9 +82,13 @@ class DiscussionController extends Controller
      * @param  \App\Models\Discussion  $discussion
      * @return \Illuminate\Http\Response
      */
-    public function edit(Discussion $discussion)
+    public function edit(Discussion $id)
     {
-        //
+        // dd($id->all());
+        $Discussions = Discussion::find($id);
+        return Inertia::render('EditForum', [
+            'editDiscussions' => $Discussions
+        ]);
     }
 
     /**
