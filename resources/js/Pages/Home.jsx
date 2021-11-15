@@ -25,7 +25,7 @@ function Home({ user }) {
                         data-aos="fade-up"
                         data-aos-duration="1000"
                     >
-                        <div className="flex-1">
+                        <div className="flex-1 flex flex-col items-center md:items-start">
                             <h1 className="text-black-1 font-extrabold text-4xl lg:text-5xl leading-normal lg:leading-normal">
                                 Find Your{" "}
                                 <span className="text-orange-3">Buddy</span> to{" "}

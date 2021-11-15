@@ -6,8 +6,8 @@ import SearchForum from "../../components/Forum/SearchForum";
 import SortBy from "../../components/Forum/SortBy";
 import Layout from "../../components/Layout";
 
-function ForumDiskusi({ user }) {
-    console.log(user);
+function ForumDiskusi({ user, discussions }) {
+    console.log(discussions);
     return (
         <Fragment>
             <Helmet>
@@ -31,36 +31,18 @@ function ForumDiskusi({ user }) {
             <h2 className="h3 mb-6 mt-8">Daftar Diskusi</h2>
             <SortBy></SortBy>
             <div className="flex flex-col gap-5 mt-6">
-                <Discussion
-                    title="Bagaimana cara berani bertanya saat kuliah berlangsung"
-                    discussion="Jadi aku tuh kaya malu gitu loh buat bertanya ke dosen
-                    takutnya pertanyaannya terlalu mudah gitu..."
-                    author="arismc2"
-                    time="8 jam yang lalu"
-                    totalResponse="2"
-                    authorLink="#"
-                    detailLink="#"
-                />
-                <Discussion
-                    title="Bagaimana cara berani bertanya saat kuliah berlangsung"
-                    discussion="Jadi aku tuh kaya malu gitu loh buat bertanya ke dosen
-                    takutnya pertanyaannya terlalu mudah gitu..."
-                    author="arismc2"
-                    time="8 jam yang lalu"
-                    totalResponse="2"
-                    authorLink="#"
-                    detailLink="#"
-                />
-                <Discussion
-                    title="Bagaimana cara berani bertanya saat kuliah berlangsung"
-                    discussion="Jadi aku tuh kaya malu gitu loh buat bertanya ke dosen
-                    takutnya pertanyaannya terlalu mudah gitu..."
-                    author="arismc2"
-                    time="8 jam yang lalu"
-                    totalResponse="2"
-                    authorLink="#"
-                    detailLink="#"
-                />
+                {discussions.map((discussion, index) => (
+                    <Discussion
+                        key={index}
+                        title={discussion.title}
+                        discussion={discussion.body}
+                        author={discussion.author}
+                        time={discussion.time}
+                        totalResponse="2" //belum pake konten dari db
+                        authorLink="#" //belum pake konten dari db
+                        detailLink="#" //belum pake konten dari db
+                    />
+                ))}
             </div>
         </Fragment>
     );

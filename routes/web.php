@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\PageController;
 use App\Models\Discussion;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,18 +42,13 @@ Route::get('/complete-data', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
 
-    Route::get('/dashboard', function () {
-        return Inertia::render('dashboard/Dashboard');
-    })->name("dashboard");
+    Route::get('/dashboard', [PageController::class, 'dashboard'])->name("dashboard");
+
+    Route::resource('user', UserController::class);
 
     Route::get('/user', function () {
         return Inertia::render('dashboard/Profil');
     })->name("profil");
-
-    Route::get('/user/edit', function () {
-        return Inertia::render('dashboard/Edit');
-    })->name("user.edit");
-
 
     Route::get('/teman', function () {
         return Inertia::render('dashboard/TemanBelajar');

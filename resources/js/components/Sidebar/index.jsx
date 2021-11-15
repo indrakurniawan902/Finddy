@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "@inertiajs/inertia-react";
 import { Menus } from "./data";
 import Menu from "./Menu";
@@ -10,6 +10,7 @@ const parsePage = (path) => path.split("/");
 
 function Sidebar({ user }) {
     const { width } = useWindowDimensions();
+    const [image, setImage] = useState(base_url + "/" + user.foto_profil);
     let pageActive = parsePage(window.location.pathname);
 
     if (width >= 768) {
@@ -27,8 +28,8 @@ function Sidebar({ user }) {
                         />
                     </Link>
                     <div className="profil mt-9 text-center">
-                        <div className="img w-24 h-24 rounded-full overflow-hidden bg-blue-2 mx-auto">
-                            <img src={avatar} alt="avatar" />
+                        <div className="img w-24 h-24 rounded-full overflow-hidden bg-blue-2 mx-auto flex items-center justify-center">
+                            <img src={image} alt="avatar" />
                         </div>
                         <p className="font-bold text-black-1 text-xl mt-2">
                             {user.nama_lengkap}

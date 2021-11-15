@@ -7,7 +7,9 @@ import AOS from "AOS";
 import { Inertia } from "@inertiajs/inertia";
 import Loading from "../components/Loading";
 
-function Login({ user }) {
+const regExp = RegExp(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/);
+
+function Login({ user, errors }) {
     useEffect(() => {
         AOS.init();
     }, []);
@@ -16,6 +18,12 @@ function Login({ user }) {
         email: "",
         password: "",
     });
+
+    const [error] = useState({
+        email: "",
+        password: "",
+    });
+
     const [isLoading, setIsLoading] = useState(false);
 
     const handleChange = (e) => {
@@ -25,6 +33,37 @@ function Login({ user }) {
             ...values,
             [key]: value,
         }));
+
+        switch (key) {
+            case "email":
+                error.email =
+                    value === ""
+                        ? "Email tidak boleh kosong"
+                        : regExp.test(value)
+                        ? ""
+                        : "Format email salah";
+                break;
+            case "password":
+                error.password =
+                    value === ""
+                        ? "Password tidak boleh kosong"
+                        : value.length < 8
+                        ? "Password minimal 8 karakter"
+                        : "";
+                break;
+        }
+    };
+
+    const buttonDisabled = () => {
+        if (
+            regExp.test(values.email) === false ||
+            values.password === "" ||
+            values.password.length < 8
+        ) {
+            return true;
+        } else {
+            return false;
+        }
     };
 
     const handleSubmit = (e) => {
@@ -80,6 +119,12 @@ function Login({ user }) {
                                     Kami senang melihatmu kembali
                                 </h2>
                             </div>
+                            {errors.message && (
+                                <div className="error bg-red-1 w-full py-2 px-3 rounded-md border-2 border-red-2 mb-3 text-red-4">
+                                    <p className="text-sm">{errors.message}</p>
+                                </div>
+                            )}
+
                             <form onSubmit={handleSubmit}>
                                 <label
                                     htmlFor="email"
@@ -97,6 +142,14 @@ function Login({ user }) {
                                     placeholder="Masukkan email kamu"
                                     required
                                 />
+                                {errors.email && (
+                                    <div className="text-sm text-red-4 mt-1">
+                                        {errors.email}
+                                    </div>
+                                )}
+                                <div className="text-sm text-red-4 mt-1">
+                                    {error.email}
+                                </div>
 
                                 <div className="flex w-full justify-between items-center mt-4">
                                     <label
@@ -118,13 +171,29 @@ function Login({ user }) {
                                     id="password"
                                     value={values.password}
                                     onChange={handleChange}
-                                    className="input mb-8"
+                                    className="input"
                                     placeholder="Masukkan password"
                                     required
                                 />
-                                <Button type="primary" isSubmit isFull>
-                                    Login
-                                </Button>
+                                {errors.password && (
+                                    <div className="text-sm text-red-4 mt-1">
+                                        {errors.password}
+                                    </div>
+                                )}
+                                <div className="text-sm text-red-4 mt-1">
+                                    {error.password}
+                                </div>
+
+                                <div className="mt-8">
+                                    <Button
+                                        type="primary"
+                                        isSubmit
+                                        isFull
+                                        isDisabled={buttonDisabled()}
+                                    >
+                                        Login
+                                    </Button>
+                                </div>
                             </form>
                             <p className="text-center mt-4">
                                 Belum memiliki akun?{" "}

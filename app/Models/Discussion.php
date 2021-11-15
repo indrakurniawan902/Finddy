@@ -12,7 +12,7 @@ class Discussion extends Model
         'id',
     ];
 
-    public function discussions()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }

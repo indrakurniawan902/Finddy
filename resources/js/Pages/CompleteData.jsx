@@ -1,11 +1,12 @@
-import { React, useState, useEffect } from "react";
-import Card from "../components/Card";
-import Footer from "../components/Footer";
+import React, { useState, useEffect, useRef } from "react";
 import Navbar from "../components/Navbar";
 import Button from "./../components/Button";
 import { Helmet } from "react-helmet";
 import { Link } from "@inertiajs/inertia-react";
+import { Inertia } from "@inertiajs/inertia";
+import Loading from "../components/Loading";
 import AOS from "AOS";
+import swal from "sweetalert2";
 
 function CompleteData({ user }) {
     useEffect(() => {
@@ -13,12 +14,18 @@ function CompleteData({ user }) {
     }, []);
 
     const [values, setValues] = useState({
-        username: "riansyh",
-        email: "",
-        password: "",
-        password_confirmation: "",
+        username: "",
+        nama_lengkap: "",
+        perguruan_tinggi: "",
+        jurusan: "",
+        no_hp: "",
+        instagram: "",
+        bidang_minat: "",
+        foto_profil: "",
     });
+    const [image, setImage] = useState();
     const [isLoading, setIsLoading] = useState(false);
+    const imageRef = useRef();
 
     const handleChange = (e) => {
         const key = e.target.id;
@@ -36,7 +43,9 @@ function CompleteData({ user }) {
         for (let key in values) {
             formData.append(key, values[key]);
         }
-        Inertia.post("/register", formData, {
+        formData.append("foto_profil", imageRef.current.files[0]);
+        formData.append("_method", "put");
+        Inertia.post(route("user.update", user.id), formData, {
             onStart: () => {
                 setIsLoading(true);
             },
@@ -44,8 +53,8 @@ function CompleteData({ user }) {
                 setIsLoading(false);
                 swal.fire({
                     icon: "success",
-                    title: "Selamat!",
-                    text: "Akun kamu berhasil dibuat.",
+                    title: "Berhasil!",
+                    text: "Data lengkapmu sudah tersimpan!",
                     confirmButtonColor: "#607EF5",
                 });
             },
@@ -61,15 +70,28 @@ function CompleteData({ user }) {
         });
     };
 
+    const handleUpload = (e) => {
+        e.preventDefault();
+        let reader = new FileReader();
+        reader.onloadend = () => {
+            if (reader.readyState === 2) {
+                setImage(reader.result);
+            }
+        };
+        reader.readAsDataURL(e.target.files[0]);
+    };
+
     return (
         <>
             <Helmet>
                 <title>Finddy - Find Your Buddy to Boost Your Study</title>
             </Helmet>
 
+            {isLoading && <Loading message="Loading..." />}
+
             <Navbar user={user} />
             <main>
-                <div className="h-screen w-1/2 bg-blue-3 absolute hidden lg:block"></div>
+                <div className="h-full w-1/2 bg-blue-3 absolute hidden lg:block"></div>
                 <div className="container-auto flex min-h-screen overflow-hidden">
                     <div className="flex-1 bg-blue-3 hidden lg:block">
                         <img
@@ -79,7 +101,7 @@ function CompleteData({ user }) {
                         />
                     </div>
 
-                    <div className="flex-1 flex flex-col items-center justify-center gap-8">
+                    <div className="flex-1 flex flex-col items-center justify-center gap-8 my-6">
                         <div
                             className="lg:w-3/5 w-9/12 max-w-xl"
                             data-aos="fade-up"
@@ -95,34 +117,54 @@ function CompleteData({ user }) {
                                 </h2>
                             </div>
                             <form onSubmit={handleSubmit}>
-                                <label htmlFor="nama" className="block text-xl">
-                                    Nama Lengkap
+                                <label
+                                    htmlFor="username"
+                                    className="block text-xl"
+                                >
+                                    Username
                                 </label>
                                 <input
                                     type="text"
-                                    name="nama"
-                                    id="nama"
-                                    value={values.nama}
+                                    name="username"
+                                    id="username"
+                                    value={values.username}
                                     onChange={handleChange}
                                     className="input"
-                                    placeholder="Nama lengkap"
+                                    placeholder="Masukkan username yang unik"
                                     required
                                 />
 
                                 <label
-                                    htmlFor="perguruantinggi"
+                                    htmlFor="nama_lengkap"
+                                    className="block text-xl mt-4"
+                                >
+                                    Nama Lengkap
+                                </label>
+                                <input
+                                    type="text"
+                                    name="nama_lengkap"
+                                    id="nama_lengkap"
+                                    value={values.nama_lengkap}
+                                    onChange={handleChange}
+                                    className="input"
+                                    placeholder="Masukkan Nama lengkapmu"
+                                    required
+                                />
+
+                                <label
+                                    htmlFor="perguruan_tinggi"
                                     className="block text-xl mt-4"
                                 >
                                     Perguruan Tinggi
                                 </label>
                                 <input
                                     type="text"
-                                    name="perguruantinggi"
-                                    id="perguruantinggi"
-                                    value={values.perguruantinggi}
+                                    name="perguruan_tinggi"
+                                    id="perguruan_tinggi"
+                                    value={values.perguruan_tinggi}
                                     onChange={handleChange}
                                     className="input"
-                                    placeholder="Perguruan tinggi"
+                                    placeholder="Tuliskan nama lengkap perguruan tinggimu"
                                     required
                                 />
                                 <label
@@ -138,41 +180,41 @@ function CompleteData({ user }) {
                                     value={values.jurusan}
                                     onChange={handleChange}
                                     className="input"
-                                    placeholder="Jurusan"
+                                    placeholder="Tuliskan jurusanmu"
                                     required
                                 />
 
                                 <label
-                                    htmlFor="bidang"
+                                    htmlFor="bidang_minat"
                                     className="block text-xl mt-4"
                                 >
                                     Bidang/minat
                                 </label>
                                 <input
                                     type="text"
-                                    name="bidang"
-                                    id="bidang"
-                                    value={values.bidang}
+                                    name="bidang_minat"
+                                    id="bidang_minat"
+                                    value={values.bidang_minat}
                                     onChange={handleChange}
                                     className="input"
-                                    placeholder="Bidang/minat"
+                                    placeholder="Tuliskan satu bidang/minat"
                                     required
                                 />
 
                                 <label
-                                    htmlFor="nomorhp"
+                                    htmlFor="no_hp"
                                     className="block text-xl mt-4"
                                 >
                                     Nomor HP
                                 </label>
                                 <input
                                     type="text"
-                                    name="nomorhp"
-                                    id="nomorhp"
-                                    value={values.nomorhp}
+                                    name="no_hp"
+                                    id="no_hp"
+                                    value={values.no_hp}
                                     onChange={handleChange}
                                     className="input"
-                                    placeholder="Nomor HP"
+                                    placeholder="Tuliskan dengan format +62xx"
                                     required
                                 />
 
@@ -189,12 +231,12 @@ function CompleteData({ user }) {
                                     value={values.instagram}
                                     onChange={handleChange}
                                     className="input"
-                                    placeholder="Username instagram"
+                                    placeholder="Tuliskan username Instagram"
                                     required
                                 />
 
                                 <label
-                                    htmlFor="foto"
+                                    htmlFor="foto_profil"
                                     className="block text-xl mt-4"
                                 >
                                     Foto profile
@@ -202,12 +244,11 @@ function CompleteData({ user }) {
 
                                 <input
                                     type="file"
-                                    name="foto"
-                                    id="foto"
-                                    value={values.foto}
-                                    onChange={handleChange}
+                                    name="foto_profil"
+                                    id="foto_profil"
+                                    ref={imageRef}
+                                    onChange={handleUpload}
                                     className="input mb-8"
-                                    placeholder="Username instagram"
                                     required
                                 />
 

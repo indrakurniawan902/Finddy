@@ -7,9 +7,8 @@ import email_sent from "../../img/illustration/email-sent.svg";
 import logo from "../../img/logo-full.svg";
 import Loading from "../components/Loading";
 
-function EmailVerify(props) {
-    console.log(props);
-    const email = props.user.email;
+function EmailVerify({ user }) {
+    const email = user;
     const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = (e) => {
@@ -63,7 +62,7 @@ function EmailVerify(props) {
                         width="300px"
                     />
                     <div className="flex flex-col gap-1 items-center">
-                        <h1 className="h2">
+                        <h1 className="h2 text-center">
                             Email Verifikasi Berhasil Dikirim!
                         </h1>
                         <p className="text-base text-black-2 max-w-md text-center">

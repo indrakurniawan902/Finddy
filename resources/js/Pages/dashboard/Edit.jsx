@@ -1,21 +1,26 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useRef } from "react";
 import { Helmet } from "react-helmet";
 import Layout from "../../components/Layout";
 import Button from "../../components/Button";
-import Discussion from "../../components/Forum/Discussion";
-import SearchForum from "../../components/Forum/SearchForum";
-import SortBy from "../../components/Forum/SortBy";
+import Loading from "../../components/Loading";
+import swal from "sweetalert2";
+import { Inertia } from "@inertiajs/inertia";
 
-function Edit({ user }) {
-    console.log(user);
-
+function Edit({ user, editUser, errors }) {
+    console.log(errors);
     const [values, setValues] = useState({
-        username: "riansyh",
-        email: "",
-        password: "",
-        password_confirmation: "",
+        username: editUser.username,
+        nama_lengkap: editUser.nama_lengkap,
+        perguruan_tinggi: editUser.perguruan_tinggi,
+        jurusan: editUser.jurusan,
+        no_hp: editUser.no_hp,
+        instagram: editUser.instagram,
+        bidang_minat: editUser.bidang_minat,
+        foto_profil: editUser.foto_profil,
     });
+    const [image, setImage] = useState();
     const [isLoading, setIsLoading] = useState(false);
+    const imageRef = useRef();
 
     const handleChange = (e) => {
         const key = e.target.id;
@@ -33,7 +38,12 @@ function Edit({ user }) {
         for (let key in values) {
             formData.append(key, values[key]);
         }
-        Inertia.post("/register", formData, {
+        if (imageRef.current.files[0])
+            formData.append("foto_profil", imageRef.current.files[0]);
+        // else formData.append("foto_profil", null);
+        formData.append("_method", "put");
+
+        Inertia.post(route("user.update", user.id), formData, {
             onStart: () => {
                 setIsLoading(true);
             },
@@ -41,8 +51,8 @@ function Edit({ user }) {
                 setIsLoading(false);
                 swal.fire({
                     icon: "success",
-                    title: "Selamat!",
-                    text: "Akun kamu berhasil dibuat.",
+                    title: "Berhasil!",
+                    text: "Data berhasil diperbarui!",
                     confirmButtonColor: "#607EF5",
                 });
             },
@@ -51,11 +61,22 @@ function Edit({ user }) {
                 swal.fire({
                     icon: "error",
                     title: "Oops...",
-                    text: "Terjadi kesalahan, mohon coba lagi",
+                    text: "Terjadi kesalahan, silahkan coba lagi",
                     confirmButtonColor: "#607EF5",
                 });
             },
         });
+    };
+
+    const handleUpload = (e) => {
+        e.preventDefault();
+        let reader = new FileReader();
+        reader.onloadend = () => {
+            if (reader.readyState === 2) {
+                setImage(reader.result);
+            }
+        };
+        reader.readAsDataURL(e.target.files[0]);
     };
 
     return (
@@ -63,6 +84,9 @@ function Edit({ user }) {
             <Helmet>
                 <title>Edit</title>
             </Helmet>
+
+            {isLoading && <Loading message="Loading..." />}
+
             <div className="flex flex-wrap justify-center md:justify-between items-center mb-10">
                 <h1 className="text-3xl font-bold text-black-1 w-full md:w-auto text-left">
                     Edit profile
@@ -70,48 +94,45 @@ function Edit({ user }) {
             </div>
             <div className="py-3 px-5 flex flex-col gap-2 md:gap-4 rounded-lg w-auto lg:w-4/4 shadow-md bg-white-1">
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor="nama" className="block text-xl">
+                    <label htmlFor="nama_lengkap" className="block text-xl">
                         Nama Lengkap
                     </label>
                     <input
                         type="text"
-                        name="nama"
-                        id="nama"
-                        value={values.nama}
+                        name="nama_lengkap"
+                        id="nama_lengkap"
+                        value={values.nama_lengkap}
                         onChange={handleChange}
                         className="input"
                         placeholder="Nama lengkap"
                         required
                     />
 
-                    <label
-                        htmlFor="email"
-                        className="block text-xl mt-4"
-                    >
-                        Email
+                    <label htmlFor="username" className="block text-xl mt-4">
+                        Username
                     </label>
                     <input
                         type="text"
-                        name="email"
-                        id="email"
-                        value={values.email}
+                        name="username"
+                        id="username"
+                        value={values.username}
                         onChange={handleChange}
                         className="input"
-                        placeholder="Email"
+                        placeholder="Username"
                         required
                     />
 
                     <label
-                        htmlFor="perguruantinggi"
+                        htmlFor="perguruan_tinggi"
                         className="block text-xl mt-4"
                     >
                         Perguruan Tinggi
                     </label>
                     <input
                         type="text"
-                        name="perguruantinggi"
-                        id="perguruantinggi"
-                        value={values.perguruantinggi}
+                        name="perguruan_tinggi"
+                        id="perguruan_tinggi"
+                        value={values.perguruan_tinggi}
                         onChange={handleChange}
                         className="input"
                         placeholder="Perguruan tinggi"
@@ -132,28 +153,31 @@ function Edit({ user }) {
                         required
                     />
 
-                    <label htmlFor="bidang" className="block text-xl mt-4">
+                    <label
+                        htmlFor="bidang_minat"
+                        className="block text-xl mt-4"
+                    >
                         Bidang/minat
                     </label>
                     <input
                         type="text"
-                        name="bidang"
-                        id="bidang"
-                        value={values.bidang}
+                        name="bidang_minat"
+                        id="bidang_minat"
+                        value={values.bidang_minat}
                         onChange={handleChange}
                         className="input"
                         placeholder="Bidang/minat"
                         required
                     />
 
-                    <label htmlFor="nomorhp" className="block text-xl mt-4">
+                    <label htmlFor="no_hp" className="block text-xl mt-4">
                         Nomor HP
                     </label>
                     <input
                         type="text"
-                        name="nomorhp"
-                        id="nomorhp"
-                        value={values.nomorhp}
+                        name="no_hp"
+                        id="no_hp"
+                        value={values.no_hp}
                         onChange={handleChange}
                         className="input"
                         placeholder="Nomor HP"
@@ -182,15 +206,13 @@ function Edit({ user }) {
                         type="file"
                         name="foto"
                         id="foto"
-                        value={values.foto}
-                        onChange={handleChange}
+                        ref={imageRef}
+                        onChange={handleUpload}
                         className="input mb-8"
-                        placeholder="Username instagram"
-                        required
                     />
 
                     <div className="gap-3">
-                        <Button type="primary" href={route("profil")}>
+                        <Button type="primary" isSubmit>
                             Simpan data
                         </Button>
                     </div>
