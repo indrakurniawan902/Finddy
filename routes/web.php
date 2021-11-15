@@ -33,6 +33,10 @@ Route::get('/forgot', function () {
     return Inertia::render('ForgotPassword');
 })->name("forgot.password");
 
+Route::get('/complete-data', function () {
+    return Inertia::render('CompleteData');
+})->name("completedata");
+
 // Route Dashboard
 
 Route::middleware(['auth', 'verified'])->group(function () {
@@ -44,6 +48,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/user', function () {
         return Inertia::render('dashboard/Profil');
     })->name("profil");
+
+    Route::get('/user/edit', function () {
+        return Inertia::render('dashboard/Edit');
+    })->name("user.edit");
+
 
     Route::get('/teman', function () {
         return Inertia::render('dashboard/TemanBelajar');
