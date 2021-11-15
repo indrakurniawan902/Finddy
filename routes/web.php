@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\DiscussionController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\PageController;
+use App\Models\Discussion;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,9 +50,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name("teman");
 
     // route sementara forum diskusi
-    Route::get('/forum', function () {
-        return Inertia::render('dashboard/ForumDiskusi');
-    })->name('forum');
+    Route::get('/forum', [DiscussionController::class, 'index'])->name('forum');
     Route::get('/forum/details', function () {
         return Inertia::render('dashboard/forum/DetailsForum');
     })->name('forum.detail');
@@ -60,6 +60,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/forum/create', function () {
         return Inertia::render('dashboard/forum/CreateForum');
     })->name('forum.create');
+    Route::post('/forum/post', [DiscussionController::class, 'store'])->name('forum.post');
     Route::get('/forum/my', function () {
         return Inertia::render('dashboard/forum/MyForum');
     })->name('forum.my');

@@ -3,6 +3,8 @@ import { Helmet } from "react-helmet";
 import Button from "../../../components/Button";
 import Layout from "../../../components/Layout";
 import BackButton from "../../../partials/BackButton";
+import { Inertia } from "@inertiajs/inertia";
+import swal from "sweetalert2";
 
 function CreateForum({ user }) {
     console.log(user);
@@ -11,6 +13,8 @@ function CreateForum({ user }) {
         title: "",
         body: "",
     });
+
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleChange = (e) => {
         const key = e.target.id;
@@ -21,6 +25,40 @@ function CreateForum({ user }) {
         }));
     };
 
+    const handleSubmit = (e) => {
+       
+        e.preventDefault();
+
+        const formData = new FormData();
+        formData.append("user_id", user.id);
+        for (let key in values) {
+            formData.append(key, values[key]);
+        }
+
+        Inertia.post(route("forum.post"), formData, {
+            onStart: () => {
+                setIsLoading(true);
+            },
+            onSuccess: () => {
+                setIsLoading(false);
+                swal.fire({
+                    icon: "success",
+                    title: "Selamat!",
+                    text: "Diskusi berhasil ditambahkan",
+                    confirmButtonColor: "#607EF5",
+                });
+            },
+            onError: () => {
+                setIsLoading(false);
+                swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Terjadi kesalahan, mohon coba lagi",
+                    confirmButtonColor: "#607EF5",
+                });
+            },
+        });
+    };
     return (
         <Fragment>
             <Helmet>
@@ -35,7 +73,7 @@ function CreateForum({ user }) {
             <BackButton href={route("forum")}></BackButton>
             <h2 className="h3 mt-6 mb-6">Buat Diskusi</h2>
 
-            <form>
+            <form onSubmit={handleSubmit} >
                 <label htmlFor="title" className="block text-xl">
                     Judul Diskusi
                 </label>

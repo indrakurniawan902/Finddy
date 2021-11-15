@@ -41,4 +41,17 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function discussion()
+    {
+        return $this->hasMany(Discussion::class);
+    }
+    public function friend()
+    {
+        return $this->hasMany(Friend::class);
+    }
+    public function updatePost()
+    {
+        return $this->hasMany(Update::class);
+    }
 }

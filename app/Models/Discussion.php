@@ -10,8 +10,10 @@ class Discussion extends Model
     use HasFactory;
     protected $guarded = [
         'id',
-        'user_id',
-        'create_at',
-
     ];
+
+    public function discussions()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

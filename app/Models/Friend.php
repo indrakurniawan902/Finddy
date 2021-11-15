@@ -15,4 +15,9 @@ class Friend extends Model
         'create_at',
 
     ];
+
+    public function friend()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

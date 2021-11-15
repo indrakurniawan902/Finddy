@@ -15,4 +15,8 @@ class Update extends Model
         'create_at',
 
     ];
+    public function updatePosts()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
