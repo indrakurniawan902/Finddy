@@ -18,9 +18,36 @@ function Edit({ user, editUser, errors }) {
         bidang_minat: editUser.bidang_minat,
         foto_profil: editUser.foto_profil,
     });
+    const [error] = useState({
+        username: "",
+        nama_lengkap: "",
+        perguruan_tinggi: "",
+        jurusan: "",
+        no_hp: "",
+        instagram: "",
+        bidang_minat: "",
+        foto_profil: "",
+    });
     const [image, setImage] = useState();
     const [isLoading, setIsLoading] = useState(false);
     const imageRef = useRef();
+
+    const buttonDisabled = () => {
+        if (
+            values.username === "" ||
+            values.username.length < 4 ||
+            values.nama_lengkap === "" ||
+            values.perguruan_tinggi === "" ||
+            values.jurusan === "" ||
+            values.no_hp === "" ||
+            values.instagram === "" ||
+            values.bidang_minat === ""
+        ) {
+            return true;
+        } else {
+            return false;
+        }
+    };
 
     const handleChange = (e) => {
         const key = e.target.id;
@@ -29,6 +56,41 @@ function Edit({ user, editUser, errors }) {
             ...values,
             [key]: value,
         }));
+
+        //VALIDASI SISI USER
+        switch (key) {
+            case "username":
+                error.username =
+                    value === ""
+                        ? "Username tidak boleh kosong"
+                        : value.length < 4
+                        ? "Username minimal 4 karakter"
+                        : "";
+                break;
+            case "nama_lengkap":
+                error.nama_lengkap =
+                    value === "" ? "Nama lengkap tidak boleh kosong" : "";
+                break;
+            case "perguruan_tinggi":
+                error.perguruan_tinggi =
+                    value === "" ? "Perguruan tinggi tidak boleh kosong" : "";
+                break;
+            case "jurusan":
+                error.jurusan =
+                    value === "" ? "Jurusan tidak boleh kosong" : "";
+                break;
+            case "no_hp":
+                error.no_hp = value === "" ? "Nomor HP tidak boleh kosong" : "";
+                break;
+            case "instagram":
+                error.instagram =
+                    value === "" ? "Instagram tidak boleh kosong" : "";
+                break;
+            case "bidang_minat":
+                error.bidang_minat =
+                    value === "" ? "Bidang minat tidak boleh kosong" : "";
+                break;
+        }
     };
 
     const handleSubmit = (e) => {
@@ -107,6 +169,14 @@ function Edit({ user, editUser, errors }) {
                         placeholder="Nama lengkap"
                         required
                     />
+                    {errors.nama_lengkap && (
+                        <div className="text-sm text-red-4 mt-1">
+                            {errors.nama_lengkap}
+                        </div>
+                    )}
+                    <div className="text-sm text-red-4 mt-1">
+                        {error.nama_lengkap}
+                    </div>
 
                     <label htmlFor="username" className="block text-xl mt-4">
                         Username
@@ -121,6 +191,14 @@ function Edit({ user, editUser, errors }) {
                         placeholder="Username"
                         required
                     />
+                    {errors.username && (
+                        <div className="text-sm text-red-4 mt-1">
+                            {errors.username}
+                        </div>
+                    )}
+                    <div className="text-sm text-red-4 mt-1">
+                        {error.username}
+                    </div>
 
                     <label
                         htmlFor="perguruan_tinggi"
@@ -138,6 +216,14 @@ function Edit({ user, editUser, errors }) {
                         placeholder="Perguruan tinggi"
                         required
                     />
+                    {errors.perguruan_tinggi && (
+                        <div className="text-sm text-red-4 mt-1">
+                            {errors.perguruan_tinggi}
+                        </div>
+                    )}
+                    <div className="text-sm text-red-4 mt-1">
+                        {error.perguruan_tinggi}
+                    </div>
 
                     <label htmlFor="jurusan" className="block text-xl mt-4">
                         Jurusan
@@ -152,6 +238,14 @@ function Edit({ user, editUser, errors }) {
                         placeholder="Jurusan"
                         required
                     />
+                    {errors.jurusan && (
+                        <div className="text-sm text-red-4 mt-1">
+                            {errors.jurusan}
+                        </div>
+                    )}
+                    <div className="text-sm text-red-4 mt-1">
+                        {error.jurusan}
+                    </div>
 
                     <label
                         htmlFor="bidang_minat"
@@ -169,6 +263,14 @@ function Edit({ user, editUser, errors }) {
                         placeholder="Bidang/minat"
                         required
                     />
+                    {errors.bidang_minat && (
+                        <div className="text-sm text-red-4 mt-1">
+                            {errors.bidang_minat}
+                        </div>
+                    )}
+                    <div className="text-sm text-red-4 mt-1">
+                        {error.bidang_minat}
+                    </div>
 
                     <label htmlFor="no_hp" className="block text-xl mt-4">
                         Nomor HP
@@ -183,6 +285,12 @@ function Edit({ user, editUser, errors }) {
                         placeholder="Nomor HP"
                         required
                     />
+                    {errors.no_hp && (
+                        <div className="text-sm text-red-4 mt-1">
+                            {errors.no_hp}
+                        </div>
+                    )}
+                    <div className="text-sm text-red-4 mt-1">{error.no_hp}</div>
 
                     <label htmlFor="instagram" className="block text-xl mt-4">
                         Instagram
@@ -197,6 +305,14 @@ function Edit({ user, editUser, errors }) {
                         placeholder="Username instagram"
                         required
                     />
+                    {errors.instagram && (
+                        <div className="text-sm text-red-4 mt-1">
+                            {errors.instagram}
+                        </div>
+                    )}
+                    <div className="text-sm text-red-4 mt-1">
+                        {error.instagram}
+                    </div>
 
                     <label htmlFor="foto" className="block text-xl mt-4">
                         Foto profile
@@ -212,7 +328,11 @@ function Edit({ user, editUser, errors }) {
                     />
 
                     <div className="gap-3">
-                        <Button type="primary" isSubmit>
+                        <Button
+                            type="primary"
+                            isSubmit
+                            isDisabled={buttonDisabled()}
+                        >
                             Simpan data
                         </Button>
                     </div>

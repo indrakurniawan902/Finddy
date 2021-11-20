@@ -48,9 +48,21 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($username)
     {
-        //
+        $user = User::where('username', $username)->first();
+        $isFriend = $user->isFriendWith(Auth::user());
+        $hasSentRequest = Auth::user()->hasSentFriendRequestTo($user);
+        $hasFriendRequest = Auth::user()->hasFriendRequestFrom($user);
+
+        return Inertia::render('dashboard/teman/DetailsTeman', [
+            'userDetail' => $user,
+            'status' => [
+                'isFriend' => $isFriend,
+                'hasSentRequest' => $hasSentRequest,
+                'hasFriendRequest' => $hasFriendRequest
+            ],
+        ]);
     }
 
     /**

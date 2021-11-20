@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Multicaret\Acquaintances\Traits\Friendable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
+    use Friendable;
 
     /**
      * The attributes that are mass assignable.
@@ -46,12 +48,12 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Discussion::class);
     }
-    public function friends()
-    {
-        return $this->hasMany(Friend::class);
-    }
-    public function updatePost()
-    {
-        return $this->hasMany(Update::class);
-    }
+    // public function friends()
+    // {
+    //     return $this->hasMany(Friend::class);
+    // }
+    // public function updatePost()
+    // {
+    //     return $this->hasMany(Update::class);
+    // }
 }

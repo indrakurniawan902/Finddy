@@ -68,11 +68,12 @@ function Register({ user, errors }) {
     const buttonDisabled = () => {
         if (
             values.email === "" ||
+            regExp.test(values.email) === false ||
             values.password === "" ||
-            values.password_confirmation === ""
+            values.password_confirmation === "" ||
+            values.password.length < 8 ||
+            values.password !== values.password_confirmation
         ) {
-            return true;
-        } else if (values.password !== values.password_confirmation) {
             return true;
         } else {
             return false;

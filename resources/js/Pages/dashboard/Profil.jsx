@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Helmet } from "react-helmet";
 import Layout from "../../components/Layout";
 import Button from "../../components/Button";
+import { Icon } from "@iconify/react";
 
 function Profil({ user }) {
     console.log(user);
@@ -15,10 +16,29 @@ function Profil({ user }) {
                 <h1 className="text-3xl font-bold text-black-1 w-full md:w-auto text-left">
                     Profile
                 </h1>
-                <div className="flex gap-6 mt-6 md:mt-0">
+                <div className="flex flex-wrap items-center justify-center gap-6 mt-6 md:mt-0">
                     <Button type="primary" href={`/user/${user.id}/edit`}>
+                        <Icon
+                            icon="akar-icons:edit"
+                            color="white"
+                            width="24"
+                            height="24"
+                            className="inline mr-2"
+                        />
                         Edit Profile
                     </Button>
+                    <div className="md:hidden">
+                        <Button href="/logout" method="post">
+                            <Icon
+                                icon="ls:logout"
+                                color="#607EF5"
+                                width="24"
+                                height="24"
+                                className="inline mr-2"
+                            />
+                            Logout
+                        </Button>
+                    </div>
                 </div>
             </div>
 

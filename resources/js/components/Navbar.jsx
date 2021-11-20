@@ -55,16 +55,25 @@ function Navbar({ user }) {
                             Bantuan
                         </Navlink>
                         {user ? (
-                            <div className="flex gap-2">
-                                <img src={profilIcon} alt="profil icon" />
-                                <Navlink
-                                    name="/dashboard"
-                                    page={pageActive}
-                                    href={route("dashboard")}
+                            <>
+                                <div className="flex gap-2">
+                                    <img src={profilIcon} alt="profil icon" />
+                                    <Navlink
+                                        name="/dashboard"
+                                        page={pageActive}
+                                        href={route("dashboard")}
+                                    >
+                                        Halo {user.nama_lengkap}
+                                    </Navlink>
+                                </div>
+                                <Button
+                                    type="primary"
+                                    href="/logout"
+                                    method="post"
                                 >
-                                    Halo, {user.nama_lengkap}
-                                </Navlink>
-                            </div>
+                                    Logout
+                                </Button>
+                            </>
                         ) : (
                             <>
                                 <Button
@@ -99,9 +108,14 @@ function Navbar({ user }) {
                 </Navlink>
                 {user ? (
                     <div className="flex flex-col gap-3 mt-2">
-                        <p className="text-xl">Halo {user.nama_lengkap}</p>
+                        <p className="text-xl text-center">
+                            Halo {user.nama_lengkap}
+                        </p>
                         <Button type="primary" href={route("dashboard")}>
                             Dashboard
+                        </Button>
+                        <Button type="secondary" href="/logout" method="post">
+                            Logout
                         </Button>
                     </div>
                 ) : (

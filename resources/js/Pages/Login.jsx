@@ -81,6 +81,9 @@ function Login({ user, errors }) {
             onSuccess: () => {
                 setIsLoading(false);
             },
+            onError: () => {
+                setIsLoading(false);
+            },
         });
     };
 

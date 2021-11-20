@@ -60,9 +60,9 @@ function Sidebar({ user }) {
             <>
                 <section className="w-full">
                     <div className="flex gap-2 items-center justify-around">
-                        {Menus.map((menu, index) => (
-                            <>
-                                {menu.menu !== "Logout" && (
+                        {Menus.map(
+                            (menu, index) =>
+                                menu.menu !== "Logout" && (
                                     <Menu
                                         key={index}
                                         href={menu.href}
@@ -71,11 +71,10 @@ function Sidebar({ user }) {
                                         iconLight={menu.iconLight}
                                         method={menu.method}
                                     >
-                                        {menu.menu}
+                                        {menu.menu.split(" ")[0]}
                                     </Menu>
-                                )}
-                            </>
-                        ))}
+                                )
+                        )}
                     </div>
                 </section>
             </>

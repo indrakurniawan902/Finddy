@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use App\Models\Discussion;
 
 class PageController extends Controller
 {
@@ -21,12 +23,49 @@ class PageController extends Controller
     public function dashboard()
     {
         $user = Auth::user();
-
-        if ($user->username === null) {
-            return Inertia::render('CompleteData');
-            // return Inertia::render('dashboard/Dashboard');
-        } else {
-            return Inertia::render('dashboard/Dashboard');
-        }
+        $friends = User::find($user->id)->getFriends();
+        $friendsRe   = User::find($user->id)->getFriendRequests();
+        return Inertia::render('dashboard/Dashboard', [
+            'count' => [
+                "friends" => $user->getFriendsCount(),
+                "requests" => count($friendsRe),
+            ],
+            // buat mereturn user selain dari user yang log in
+            'users' => User::all()->except($user->id)->map(function ($user) {
+                $isFriend = $user->isFriendWith(Auth::user());
+                $hasSentRequest = Auth::user()->hasSentFriendRequestTo($user);
+                $hasFriendRequest = Auth::user()->hasFriendRequestFrom($user);
+                return [
+                    'id' => $user->id,
+                    'nama_lengkap' => $user->nama_lengkap,
+                    'username' => $user->username,
+                    'bidang_minat' => $user->bidang_minat,
+                    'foto' => $user->foto_profil,
+                    'isFriend' => $isFriend,
+                    'isSent' => $hasSentRequest,
+                    'isWait' => $hasFriendRequest
+                ];
+            }),
+            'friends' => $friends->map(function ($user) {
+                return [
+                    'id' => $user->id,
+                    'nama_lengkap' => $user->nama_lengkap,
+                    'username' => $user->username,
+                    'bidang_minat' => $user->bidang_minat,
+                    'foto' => $user->foto_profil,
+                ];
+            }),
+            // mereturn permintaan pertemanan
+            'request' => $friendsRe->map(function ($req) {
+                $user = User::find($req->sender_id);
+                return [
+                    'id' => $user->id,
+                    'nama_lengkap' => $user->nama_lengkap,
+                    'username' => $user->username,
+                    'bidang_minat' => $user->bidang_minat,
+                    'foto' => $user->foto_profil,
+                ];
+            }),
+        ]);
     }
 }
