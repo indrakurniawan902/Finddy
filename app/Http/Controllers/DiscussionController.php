@@ -71,9 +71,11 @@ class DiscussionController extends Controller
      * @param  \App\Models\Discussion  $discussion
      * @return \Illuminate\Http\Response
      */
-    public function show(Discussion $discussion)
+    public function show(Discussion $id)
     {
-        //
+        return Inertia::render('DetailsForum', [
+            'details' => Discussion::findOrFail($id)
+        ]);
     }
 
     /**
@@ -109,8 +111,10 @@ class DiscussionController extends Controller
      * @param  \App\Models\Discussion  $discussion
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Discussion $discussion)
+    public function destroy(Discussion $id)
     {
-        //
+        $delete = Discussion::find($id);
+        $delete->delete();
+        return Redirect::route('forum.my');
     }
 }
