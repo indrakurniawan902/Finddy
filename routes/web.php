@@ -5,8 +5,6 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\PageController;
 use App\Models\Discussion;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\FriendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,37 +40,39 @@ Route::get('/complete-data', function () {
 // Route Dashboard
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::resource('user', UserController::class);
-    Route::middleware(['completedata'])->group(function () {
-        Route::get('/dashboard', [PageController::class, 'dashboard'])->name("dashboard");
 
-        Route::get('/user', function () {
-            return Inertia::render('dashboard/Profil');
-        })->name("profil");
+    Route::get('/dashboard', function () {
+        return Inertia::render('dashboard/Dashboard');
+    })->name("dashboard");
 
-        Route::get('/teman', function () {
-            return Inertia::render('dashboard/TemanBelajar');
-        })->name("teman");
+    Route::get('/user', function () {
+        return Inertia::render('dashboard/Profil');
+    })->name("profil");
 
-        // route sementara forum diskusi
-        Route::get('/forum', [DiscussionController::class, 'index'])->name('forum');
-        Route::get('/forum/details', function () {
-            return Inertia::render('dashboard/forum/DetailsForum');
-        })->name('forum.detail');
-        Route::get('/forum/edit', function () {
-            return Inertia::render('dashboard/forum/EditForum');
-        })->name('forum.edit');
-        Route::get('/forum/create', function () {
-            return Inertia::render('dashboard/forum/CreateForum');
-        })->name('forum.create');
-        Route::post('/forum/post', [DiscussionController::class, 'store'])->name('forum.post');
-        Route::get('/forum/my', function () {
-            return Inertia::render('dashboard/forum/MyForum');
-        })->name('forum.my');
+    Route::get('/user/edit', function () {
+        return Inertia::render('dashboard/Edit');
+    })->name("user.edit");
 
-        // route friend
-        Route::post('/add/{id}', [FriendController::class, 'add'])->name("add.friend");
-        Route::post('/acc/{id}', [FriendController::class, 'accept'])->name("acc.friend");
-        Route::post('/deny/{id}', [FriendController::class, 'deny'])->name("deny.friend");
-    });
+
+    Route::get('/teman', function () {
+        return Inertia::render('dashboard/TemanBelajar');
+    })->name("teman");
+
+    // route sementara forum diskusi
+    // Route::resource('discussions',DiscussionController::class);
+    Route::get('/forum', [DiscussionController::class, 'index'])->name('forum');
+    Route::get('/forum/details', function () {
+        return Inertia::render('dashboard/forum/DetailsForum');
+    })->name('forum.detail');
+    Route::get('/forum/edit', function () {
+        return Inertia::render('dashboard/forum/EditForum');
+    })->name('forum.edit');
+    Route::get('/forum/create', function () {
+        return Inertia::render('dashboard/forum/CreateForum');
+    })->name('forum.create');
+    Route::post('/forum/post', [DiscussionController::class, 'store'])->name('forum.post');
+    Route::get('/forum/my', function () {
+        return Inertia::render('dashboard/forum/MyForum');
+    })->name('forum.my');
+    // Route::get('/forum/my', [DiscussionController::class, 'showForum'])->name('forum.my');
 });

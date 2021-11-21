@@ -8,7 +8,7 @@ use App\Models\Discussion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Middleware\HandleInertiaRequests;
-
+use Illuminate\Support\Facades\Auth;
 
 
 class DiscussionController extends Controller
@@ -75,6 +75,15 @@ class DiscussionController extends Controller
     {
         return Inertia::render('DetailsForum', [
             'details' => Discussion::findOrFail($id)
+        ]);
+    }
+
+    public function showForum(Discussion $id)
+    {
+        $user = Auth::user();
+        $discussion = $user->discussions;
+        return Inertia::render('forum.my', [
+            'myforum' => $discussion
         ]);
     }
 
