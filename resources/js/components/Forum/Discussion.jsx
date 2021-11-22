@@ -5,8 +5,11 @@ import calendarIcon from "../../../img/icon/calendar.svg";
 import responseIcon from "../../../img/icon/response.svg";
 import editIcon from "../../../img/icon/edit.svg";
 import deleteIcon from "../../../img/icon/trash.svg";
+import Swal from "sweetalert2";
+import { Inertia } from "@inertiajs/inertia";
 
 function Discussion({
+    id,
     title,
     discussion,
     author,
@@ -15,7 +18,32 @@ function Discussion({
     detailLink,
     authorLink,
     isEditable,
+    editLink,
+    deleteLink,
+    status,
 }) {
+    const handleDelete = () => {
+        Swal.fire({
+            title: "Apakah kamu yakin?",
+            text: "Kamu tidak bisa membatalkan ini",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#607EF5",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Ya, Hapus diskusi",
+            cancelButtonText: "Batalkan",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Inertia.delete(route("forum.delete", id));
+                Swal.fire({
+                    title: "Dihapus!",
+                    text: "Diskusi berhasil dihapus",
+                    icon: "success",
+                    confirmButtonColor: "#607EF5",
+                });
+            }
+        });
+    };
     return (
         <div
             className="py-3 px-5 flex flex-col gap-2 md:gap-4 rounded-lg w-auto lg:w-3/4 shadow-md bg-white-1"
@@ -27,8 +55,8 @@ function Discussion({
                 </h3>
                 {isEditable ? (
                     <div className="flex gap-3 items-center mb-3">
-                        <p className="text-xs">Status</p>
-                        <Link href="#">
+                        <p className="text-xs">{status}</p>
+                        <Link href={editLink}>
                             <img
                                 src={editIcon}
                                 height="20px"
@@ -36,7 +64,7 @@ function Discussion({
                                 alt="edit icon"
                             />
                         </Link>
-                        <Link href="#">
+                        <Link onClick={handleDelete}>
                             <img
                                 src={deleteIcon}
                                 height="20px"

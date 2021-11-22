@@ -39,8 +39,8 @@ function ForumDiskusi({ user, discussions }) {
                         author={discussion.author}
                         time={discussion.time}
                         totalResponse="2" //belum pake konten dari db
-                        authorLink="#" //belum pake konten dari db
-                        detailLink="#" //belum pake konten dari db
+                        authorLink={route("user.show", discussion.author)}
+                        detailLink={route("forum.detail", discussion.id)}
                     />
                 ))}
             </div>

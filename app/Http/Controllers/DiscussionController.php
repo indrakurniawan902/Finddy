@@ -73,17 +73,40 @@ class DiscussionController extends Controller
      */
     public function show(Discussion $id)
     {
-        return Inertia::render('DetailsForum', [
-            'details' => Discussion::findOrFail($id)
+        $discussion = Discussion::find($id)->first();
+        return Inertia::render('dashboard/forum/EditForum', [
+            'id' => $discussion->id,
+            'title' => $discussion->title,
+            'body' => $discussion->body,
         ]);
     }
 
-    public function showForum(Discussion $id)
+    public function details(Discussion $id)
+    {
+        $discussion = Discussion::find($id);
+        return Inertia::render('dashboard/forum/DetailsForum', [
+            'details' => $discussion
+        ]);
+    }
+
+    public function showForum()
     {
         $user = Auth::user();
-        $discussion = $user->discussions;
-        return Inertia::render('forum.my', [
-            'myforum' => $discussion
+        $discussions = $user->discussions;
+        return Inertia::render('dashboard/forum/MyForum', [
+            'discussions' => $discussions->map(function ($discussion) {
+                return [
+                    'id' => $discussion->id,
+                    'title' => $discussion->title,
+                    'body' => $discussion->body,
+                    'time' => $discussion->created_at->diffForHumans(),
+                    'author' => $discussion->user->username,
+                    // 'totalResponse' => $discussion->a,
+                    // 'authorLink' => $discussion->a,
+                    // 'detailLink' => $discussion->a,
+                    // 'edit_url' => URL::route('users.edit', $user),
+                ];
+            }),
         ]);
     }
 
@@ -109,9 +132,14 @@ class DiscussionController extends Controller
      * @param  \App\Models\Discussion  $discussion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Discussion $discussion)
+    public function update(Request $request, $id)
     {
-        //
+        $put = $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+        Discussion::find($id)->update($put);
+        return Redirect::route('forum.my');
     }
 
     /**
@@ -120,7 +148,7 @@ class DiscussionController extends Controller
      * @param  \App\Models\Discussion  $discussion
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Discussion $id)
+    public function destroy($id)
     {
         $delete = Discussion::find($id);
         $delete->delete();

@@ -14,8 +14,6 @@ function CreateForum({ user }) {
         body: "",
     });
 
-    const [isLoading, setIsLoading] = useState(false);
-
     const handleChange = (e) => {
         const key = e.target.id;
         const value = e.target.value;
@@ -26,7 +24,6 @@ function CreateForum({ user }) {
     };
 
     const handleSubmit = (e) => {
-       
         e.preventDefault();
 
         const formData = new FormData();
@@ -36,11 +33,7 @@ function CreateForum({ user }) {
         }
 
         Inertia.post(route("forum.post"), formData, {
-            onStart: () => {
-                setIsLoading(true);
-            },
             onSuccess: () => {
-                setIsLoading(false);
                 swal.fire({
                     icon: "success",
                     title: "Selamat!",
@@ -49,7 +42,6 @@ function CreateForum({ user }) {
                 });
             },
             onError: () => {
-                setIsLoading(false);
                 swal.fire({
                     icon: "error",
                     title: "Oops...",
@@ -73,7 +65,7 @@ function CreateForum({ user }) {
             <BackButton href={route("forum")}></BackButton>
             <h2 className="h3 mt-6 mb-6">Buat Diskusi</h2>
 
-            <form onSubmit={handleSubmit} >
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="title" className="block text-xl">
                     Judul Diskusi
                 </label>

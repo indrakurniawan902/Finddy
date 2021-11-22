@@ -1,15 +1,17 @@
+import { Inertia } from "@inertiajs/inertia";
 import React, { Fragment, useState } from "react";
 import { Helmet } from "react-helmet";
+import swal from "sweetalert2";
 import Button from "../../../components/Button";
 import Layout from "../../../components/Layout";
 import BackButton from "../../../partials/BackButton";
 
-function EditForum({ user }) {
+function EditForum({ user, id, title, body }) {
     console.log(user);
 
     const [values, setValues] = useState({
-        title: "",
-        body: "",
+        title,
+        body,
     });
 
     const handleChange = (e) => {
@@ -19,6 +21,35 @@ function EditForum({ user }) {
             ...values,
             [key]: value,
         }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const formData = new FormData();
+        for (let key in values) {
+            formData.append(key, values[key]);
+        }
+        formData.append("_method", "put");
+
+        Inertia.post(route("forum.update", id), formData, {
+            onSuccess: () => {
+                swal.fire({
+                    icon: "success",
+                    title: "Berhasil!",
+                    text: "Forum diskusi berhasil diperbarui!",
+                    confirmButtonColor: "#607EF5",
+                });
+            },
+            onError: () => {
+                swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Terjadi kesalahan, silahkan coba lagi",
+                    confirmButtonColor: "#607EF5",
+                });
+            },
+        });
     };
 
     return (
@@ -35,7 +66,7 @@ function EditForum({ user }) {
             <BackButton href={route("forum")}></BackButton>
             <h2 className="h3 mt-6 mb-6">Edit Diskusi</h2>
 
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="title" className="block text-xl">
                     Judul Diskusi
                 </label>

@@ -5,8 +5,8 @@ import Discussion from "../../../components/Forum/Discussion";
 import Layout from "../../../components/Layout";
 import BackButton from "../../../partials/BackButton";
 
-function MyForum({ user }) {
-    console.log(user);
+function MyForum({ user, discussions }) {
+    console.log(discussions);
     return (
         <Fragment>
             <Helmet>
@@ -20,17 +20,27 @@ function MyForum({ user }) {
             </div>
             <BackButton href={route("forum")}></BackButton>
             <h2 className="h3 mt-6 mb-6">Diskusiku</h2>
-            <Discussion
-                title="Bagaimana cara berani bertanya saat kuliah berlangsung"
-                discussion="Jadi aku tuh kaya malu gitu loh buat bertanya ke dosen
-                    takutnya pertanyaannya terlalu mudah gitu..."
-                author="arismc2"
-                time="8 jam yang lalu"
-                totalResponse="2"
-                authorLink="#"
-                detailLink="#"
-                isEditable
-            />
+
+            {discussions ? (
+                discussions.map((discussion, index) => (
+                    <Discussion
+                        key={index}
+                        id={discussion.id}
+                        title={discussion.title}
+                        discussion={discussion.body}
+                        author={discussion.author}
+                        time={discussion.time}
+                        totalResponse="2" //belum pake konten dari db
+                        authorLink="#"
+                        detailLink={route("forum.detail", discussion.id)}
+                        isEditable
+                        editLink={route("forum.edit", discussion.id)}
+                        deleteLink={route("forum.delete", discussion.id)}
+                    />
+                ))
+            ) : (
+                <p className="mt-4">Belum ada diskusi yang kamu buat</p>
+            )}
         </Fragment>
     );
 }
