@@ -4515,31 +4515,31 @@ function Dashboard(_ref) {
         children: "Teman Belajar"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_partials_StatusCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
         number: count.requests,
-        href: "#",
+        href: route("friend.request"),
         children: "Permintaan Pertemanan"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_partials_StatusCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        number: "12",
+        number: count.discussions,
         href: route("forum.my"),
         children: "Diskusiku"
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
       className: "h3 mt-8 mb-6",
-      children: "Req Teman Belajar"
+      children: "Teman Belajar"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: "flex flex-col gap-3",
-      children: request.map(function (user, index) {
+      children: friends.map(function (user, index) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Friend__WEBPACK_IMPORTED_MODULE_2__["default"], {
           id: user.id,
           name: user.nama_lengkap,
           bidang: user.bidang_minat,
           avatar: user.foto,
           href: route("user.show", user.username),
-          isWait: true
+          isFriend: true
         }, index);
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
       className: "h3 mt-8 mb-6",
-      children: "All User"
+      children: "Semua Pengguna"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: "flex flex-col gap-3",
       children: users.map(function (user, index) {
@@ -4555,21 +4555,6 @@ function Dashboard(_ref) {
             isSent: user.isSent
           }, index);
         }
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
-      className: "h3 mt-8 mb-6",
-      children: "Daftar Teman Belajar"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-      className: "flex flex-col gap-3",
-      children: friends.map(function (user, index) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Friend__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          id: user.id,
-          name: user.nama_lengkap,
-          bidang: user.bidang_minat,
-          avatar: user.foto,
-          href: route("user.show", user.username),
-          isFriend: true
-        }, index);
       })
     })]
   });
@@ -5209,7 +5194,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/es/Helmet.js");
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Layout */ "./resources/js/components/Layout/index.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Button */ "./resources/js/components/Button.jsx");
+/* harmony import */ var _components_Friend__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Friend */ "./resources/js/components/Friend.jsx");
+/* harmony import */ var _img_icon_friend_req_off_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../img/icon/friend-req-off.svg */ "./resources/img/icon/friend-req-off.svg");
+/* harmony import */ var _img_icon_friend_req_on_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../img/icon/friend-req-on.svg */ "./resources/img/icon/friend-req-on.svg");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
 
 
 
@@ -5217,22 +5212,67 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function TemanBelajar(_ref) {
-  var user = _ref.user;
+  var user = _ref.user,
+      friends = _ref.friends,
+      count = _ref.count;
   console.log(user);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_helmet__WEBPACK_IMPORTED_MODULE_1__.Helmet, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("title", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_helmet__WEBPACK_IMPORTED_MODULE_1__.Helmet, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("title", {
         children: "Teman Belajar"
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h1", {
       className: "text-3xl font-bold text-black-1 mb-10",
       children: "Teman Belajar"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+      className: "h3 mb-6",
+      children: "Cari Teman Belajar"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("form", {
+      className: "flex gap-2 md:gap-5 max-h-10 md:max-h-full",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+        type: "text",
+        className: "input-2 flex-grow",
+        required: true,
+        placeholder: "Temukan berdasarkan bidang/minat"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        type: "primary",
+        isSubmit: true,
+        children: "Cari"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+      className: "flex items-center justify-between",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
+        className: "h3 mt-8 mb-6",
+        children: "Daftar Teman Belajar"
+      }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.Link, {
+        as: "button",
+        href: route("friend.request"),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
+          className: "shadow-sm",
+          src: count.request > 0 ? _img_icon_friend_req_on_svg__WEBPACK_IMPORTED_MODULE_6__["default"] : _img_icon_friend_req_off_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
+          alt: "friends request icon",
+          height: "36px",
+          width: "36px"
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      className: "flex flex-col gap-3",
+      children: friends.map(function (user, index) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Friend__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          id: user.id,
+          name: user.nama_lengkap,
+          bidang: user.bidang_minat,
+          avatar: user.foto,
+          href: route("user.show", user.username),
+          isFriend: true
+        }, index);
+      })
     })]
   });
 }
 
 TemanBelajar.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
     children: page,
     user: page.props.user
   });
@@ -6065,6 +6105,86 @@ DetailsTeman.layout = function (page) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DetailsTeman);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/dashboard/teman/RequestsTeman.jsx":
+/*!**************************************************************!*\
+  !*** ./resources/js/Pages/dashboard/teman/RequestsTeman.jsx ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/es/Helmet.js");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/Layout */ "./resources/js/components/Layout/index.jsx");
+/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Button */ "./resources/js/components/Button.jsx");
+/* harmony import */ var _partials_BackButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../partials/BackButton */ "./resources/js/partials/BackButton.jsx");
+/* harmony import */ var _components_Friend__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../components/Friend */ "./resources/js/components/Friend.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+
+
+function RequestsTeman(_ref) {
+  var prevUrl = _ref.prevUrl,
+      requests = _ref.requests;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_helmet__WEBPACK_IMPORTED_MODULE_1__.Helmet, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("title", {
+        children: "Permintaan Pertemanan"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      className: "flex justify-between items-center mb-10",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
+        className: "text-3xl font-bold text-black-1",
+        children: "Teman Belajar"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      className: "flex flex-wrap justify-start items-center mb-10",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_partials_BackButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        href: prevUrl
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h2", {
+      className: "h3 mt-6 mb-6",
+      children: "Permintaan Pertemanan"
+    }), requests.length > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      className: "flex flex-col gap-3",
+      children: requests.map(function (user, index) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Friend__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          id: user.id,
+          name: user.nama_lengkap,
+          bidang: user.bidang_minat,
+          avatar: user.foto,
+          href: route("user.show", user.username),
+          isWait: true
+        }, index);
+      })
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+      className: "mt-6 text-center",
+      children: "Belum ada permintaan pertemanan"
+    })]
+  });
+}
+
+RequestsTeman.layout = function (page) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: page,
+    user: page.props.user
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RequestsTeman);
 
 /***/ }),
 
@@ -8025,6 +8145,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/forum-white.svg?54fc9eb6b15c08496fa3a633ebee2825");
+
+/***/ }),
+
+/***/ "./resources/img/icon/friend-req-off.svg":
+/*!***********************************************!*\
+  !*** ./resources/img/icon/friend-req-off.svg ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/friend-req-off.svg?5878e5550836c8ccb9efe6ed820202b3");
+
+/***/ }),
+
+/***/ "./resources/img/icon/friend-req-on.svg":
+/*!**********************************************!*\
+  !*** ./resources/img/icon/friend-req-on.svg ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/friend-req-on.svg?c806d7dc8a71e2ed5ad9a25ba8aeda07");
 
 /***/ }),
 
@@ -47952,7 +48102,9 @@ var map = {
 	"./dashboard/forum/MyForum": "./resources/js/Pages/dashboard/forum/MyForum.jsx",
 	"./dashboard/forum/MyForum.jsx": "./resources/js/Pages/dashboard/forum/MyForum.jsx",
 	"./dashboard/teman/DetailsTeman": "./resources/js/Pages/dashboard/teman/DetailsTeman.jsx",
-	"./dashboard/teman/DetailsTeman.jsx": "./resources/js/Pages/dashboard/teman/DetailsTeman.jsx"
+	"./dashboard/teman/DetailsTeman.jsx": "./resources/js/Pages/dashboard/teman/DetailsTeman.jsx",
+	"./dashboard/teman/RequestsTeman": "./resources/js/Pages/dashboard/teman/RequestsTeman.jsx",
+	"./dashboard/teman/RequestsTeman.jsx": "./resources/js/Pages/dashboard/teman/RequestsTeman.jsx"
 };
 
 

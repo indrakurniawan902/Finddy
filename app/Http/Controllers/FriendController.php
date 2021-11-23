@@ -5,12 +5,49 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
+use App\Models\Discussion;
 
 class FriendController extends Controller
 {
     public function index()
     {
-        //
+        $user = Auth::user();
+        $friends = User::find($user->id)->getFriends();
+        $countRequest   = count(User::find($user->id)->getFriendRequests());
+
+        return Inertia::render('dashboard/TemanBelajar', [
+            'friends' => $friends->map(function ($user) {
+                return [
+                    'id' => $user->id,
+                    'nama_lengkap' => $user->nama_lengkap,
+                    'username' => $user->username,
+                    'bidang_minat' => $user->bidang_minat,
+                    'foto' => $user->foto_profil,
+                ];
+            }),
+            'count' => [
+                'request' => $countRequest,
+            ]
+        ]);
+    }
+
+    public function request()
+    {
+        $user = Auth::user();
+        $friendsRe   = User::find($user->id)->getFriendRequests();
+        return Inertia::render('dashboard/teman/RequestsTeman', [
+            'requests' => $friendsRe->map(function ($req) {
+                $user = User::find($req->sender_id);
+                return [
+                    'id' => $user->id,
+                    'nama_lengkap' => $user->nama_lengkap,
+                    'username' => $user->username,
+                    'bidang_minat' => $user->bidang_minat,
+                    'foto' => $user->foto_profil,
+                ];
+            }),
+        ]);
     }
 
     public function add($id)

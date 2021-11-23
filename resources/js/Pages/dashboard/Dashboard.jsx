@@ -24,17 +24,20 @@ function Dashboard({ user, users, request, friends, count }) {
                 <StatusCard number={count.friends} href="/teman">
                     Teman Belajar
                 </StatusCard>
-                <StatusCard number={count.requests} href="#">
+                <StatusCard
+                    number={count.requests}
+                    href={route("friend.request")}
+                >
                     Permintaan Pertemanan
                 </StatusCard>
-                <StatusCard number="12" href={route("forum.my")}>
+                <StatusCard number={count.discussions} href={route("forum.my")}>
                     Diskusiku
                 </StatusCard>
             </div>
 
-            <h3 className="h3 mt-8 mb-6">Req Teman Belajar</h3>
+            <h3 className="h3 mt-8 mb-6">Teman Belajar</h3>
             <div className="flex flex-col gap-3">
-                {request.map((user, index) => (
+                {friends.map((user, index) => (
                     <Friend
                         id={user.id}
                         key={index}
@@ -42,11 +45,12 @@ function Dashboard({ user, users, request, friends, count }) {
                         bidang={user.bidang_minat}
                         avatar={user.foto}
                         href={route("user.show", user.username)}
-                        isWait
+                        isFriend
                     />
                 ))}
             </div>
-            <h3 className="h3 mt-8 mb-6">All User</h3>
+
+            <h3 className="h3 mt-8 mb-6">Semua Pengguna</h3>
             <div className="flex flex-col gap-3">
                 {users.map((user, index) => {
                     if (user.username !== null) {
@@ -65,20 +69,6 @@ function Dashboard({ user, users, request, friends, count }) {
                         );
                     }
                 })}
-            </div>
-            <h3 className="h3 mt-8 mb-6">Daftar Teman Belajar</h3>
-            <div className="flex flex-col gap-3">
-                {friends.map((user, index) => (
-                    <Friend
-                        id={user.id}
-                        key={index}
-                        name={user.nama_lengkap}
-                        bidang={user.bidang_minat}
-                        avatar={user.foto}
-                        href={route("user.show", user.username)}
-                        isFriend
-                    />
-                ))}
             </div>
         </Fragment>
     );

@@ -50,9 +50,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
             return Inertia::render('dashboard/Profil');
         })->name("profil");
 
-        Route::get('/teman', function () {
-            return Inertia::render('dashboard/TemanBelajar');
-        })->name("teman");
 
         // route sementara forum diskusi
         Route::get('/forum', [DiscussionController::class, 'index'])->name('forum');;
@@ -70,5 +67,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('/add/{id}', [FriendController::class, 'add'])->name("add.friend");
         Route::post('/acc/{id}', [FriendController::class, 'accept'])->name("acc.friend");
         Route::post('/deny/{id}', [FriendController::class, 'deny'])->name("deny.friend");
+        Route::get('/teman', [FriendController::class, 'index'])->name("friend");
+        Route::get('/teman/request', [FriendController::class, 'request'])->name("friend.request");
     });
 });

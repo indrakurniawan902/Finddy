@@ -6,7 +6,6 @@ use Inertia\Inertia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
-use App\Models\Discussion;
 
 class PageController extends Controller
 {
@@ -23,12 +22,14 @@ class PageController extends Controller
     public function dashboard()
     {
         $user = Auth::user();
+
         $friends = User::find($user->id)->getFriends();
         $friendsRe   = User::find($user->id)->getFriendRequests();
         return Inertia::render('dashboard/Dashboard', [
             'count' => [
                 "friends" => $user->getFriendsCount(),
                 "requests" => count($friendsRe),
+                "discussions" => count($user->discussions),
             ],
             // buat mereturn user selain dari user yang log in
             'users' => User::all()->except($user->id)->map(function ($user) {
