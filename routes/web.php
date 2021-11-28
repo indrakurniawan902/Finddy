@@ -70,11 +70,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('/deny/{id}', [FriendController::class, 'deny'])->name("deny.friend");
         Route::get('/teman', [FriendController::class, 'index'])->name("friend");
         Route::get('/teman/request', [FriendController::class, 'request'])->name("friend.request");
-<<<<<<< Updated upstream
-=======
 
         //route replies
         Route::post('/reply', [ReplyController::class, 'create'])->name("add.reply");
->>>>>>> Stashed changes
     });
 });
