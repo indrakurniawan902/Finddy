@@ -5,13 +5,14 @@ import Discussion from "../../../components/Forum/Discussion";
 import Reply from "../../../components/Forum/Reply";
 import Layout from "../../../components/Layout";
 import BackButton from "../../../partials/BackButton";
+import { Inertia } from "@inertiajs/inertia";
+import swal from "sweetalert2";
 
-function DetailsForum({ user }) {
-    console.log(user);
+function DetailsForum({ user, details, errors, replies }) {
+    console.log(replies);
 
     const [values, setValues] = useState({
-        title: "",
-        body: "",
+        content: "",
     });
 
     const handleChange = (e) => {
@@ -21,6 +22,37 @@ function DetailsForum({ user }) {
             ...values,
             [key]: value,
         }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const formData = new FormData();
+        formData.append("user_id", user.id);
+        formData.append("discussion_id", details.id);
+        for (let key in values) {
+            formData.append(key, values[key]);
+        }
+
+        Inertia.post(route("add.reply"), formData, {
+            onSuccess: () => {
+                swal.fire({
+                    icon: "success",
+                    title: "Berhasil!",
+                    text: "Tanggapan berhasil dikirim",
+                    confirmButtonColor: "#607EF5",
+                });
+                setValues({content:""})
+            },
+            onError: () => {
+                swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Terjadi kesalahan, mohon coba lagi",
+                    confirmButtonColor: "#607EF5",
+                });
+            },
+        });
     };
 
     return (
@@ -43,23 +75,22 @@ function DetailsForum({ user }) {
             <BackButton href={route("forum")}></BackButton>
             <h2 className="h3 mt-6 mb-6">Pertanyaan</h2>
             <Discussion
-                title="Bagaimana cara berani bertanya saat kuliah berlangsung"
-                discussion="Jadi aku tuh kaya malu gitu loh buat bertanya ke dosen
-                    takutnya pertanyaannya terlalu mudah gitu Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo doloribus nulla nostrum explicabo iusto odio tenetur, sed perspiciatis saepe velit quaerat suscipit"
-                author="arismc2"
-                time="8 jam yang lalu"
-                totalResponse="2"
-                authorLink="#"
+                title={details.title}
+                discussion={details.body}
+                author={details.author}
+                time={details.time}
+                totalResponse={details.totalResponse}
+                authorLink={route("user.show", details.author)}
                 detailLink="#"
             />
             <h2 className="h3 mt-6 mb-6">Tanggapan</h2>
             <div className="py-3 px-5 flex flex-col gap-4 rounded-lg w-auto lg:w-3/4 bg-white-1">
-                <form className="flex flex-col justify-end mb-6">
+                <form className="flex flex-col justify-end mb-6" onSubmit={handleSubmit}>
                     <textarea
                         rows="3"
-                        name="body"
-                        id="body"
-                        value={values.body}
+                        name="content"
+                        id="content"
+                        value={values.content}
                         onChange={handleChange}
                         className="input mb-4"
                         placeholder="Masukkan tanggapanmu di sini"
@@ -69,24 +100,21 @@ function DetailsForum({ user }) {
                         Kirim Tanggapan
                     </Button>
                 </form>
-                <Reply
-                    name="Rian Febriansyah"
-                    time="2 jam yang lalu"
-                    username="riansyh"
-                    reply="lorem ipsum dolor amat lorem ipsum dolor amat lorem ipsum dolor amat lorem ipsum dolor amat"
-                />
-                <Reply
-                    name="Rian Febriansyah"
-                    time="2 jam yang lalu"
-                    username="riansyh"
-                    reply="lorem ipsum dolor amat lorem ipsum dolor amat lorem ipsum dolor amat lorem ipsum dolor amat"
-                />
-                <Reply
-                    name="Rian Febriansyah"
-                    time="2 jam yang lalu"
-                    username="riansyh"
-                    reply="lorem ipsum dolor amat lorem ipsum dolor amat lorem ipsum dolor amat lorem ipsum dolor amat"
-                />
+                
+            {replies ? (
+                replies.map((reply, index) => (
+                    <Reply
+                        key={index}
+                        name={reply.name}
+                        time={reply.created_at}
+                        username={reply.username}
+                        reply={reply.content}
+                        avatar={reply.profil}
+                    />
+                ))
+            ) : (
+                <p className="mt-4">Belum ada tanggapan</p>
+            )}
             </div>
         </>
     );

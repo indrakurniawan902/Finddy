@@ -28,7 +28,7 @@ class DiscussionController extends Controller
                     'body' => $discussion->body,
                     'time' => $discussion->created_at->diffForHumans(),
                     'author' => $discussion->user->username,
-                    // 'totalResponse' => $discussion->a,
+                    'totalResponse' => count($discussion->replies),
                     // 'authorLink' => $discussion->a,
                     // 'detailLink' => $discussion->a,
                     // 'edit_url' => URL::route('users.edit', $user),
@@ -83,9 +83,31 @@ class DiscussionController extends Controller
 
     public function details(Discussion $id)
     {
-        $discussion = Discussion::find($id);
+        $discussion = Discussion::find($id)->first();
+        $replies = $discussion->replies;
+        // dd($replies);
         return Inertia::render('dashboard/forum/DetailsForum', [
-            'details' => $discussion
+            'details' => [
+                    'id' => $discussion->id,
+                    'title' => $discussion->title,
+                    'body' => $discussion->body,
+                    'time' => $discussion->created_at->diffForHumans(),
+                    'author' => $discussion->user->username,
+                    'totalResponse' => count($discussion->replies),
+                    // 'authorLink' => $discussion->a,
+                    // 'detailLink' => $discussion->a,
+                    // 'edit_url' => URL::route('users.edit', $user),                
+            ],
+            'replies' => $replies->map(function ($reply) {
+                return [
+                    'id' => $reply->id,
+                    'content' => $reply->content,
+                    'name' => $reply->user->nama_lengkap,
+                    'username' => $reply->user->username,
+                    'created_at' => $reply->created_at->diffForHumans(),
+                    'profil' => $reply->user->foto_profil,
+                ];
+            }),            
         ]);
     }
 
@@ -101,7 +123,7 @@ class DiscussionController extends Controller
                     'body' => $discussion->body,
                     'time' => $discussion->created_at->diffForHumans(),
                     'author' => $discussion->user->username,
-                    // 'totalResponse' => $discussion->a,
+                    'totalResponse' => count($discussion->replies),
                     // 'authorLink' => $discussion->a,
                     // 'detailLink' => $discussion->a,
                     // 'edit_url' => URL::route('users.edit', $user),

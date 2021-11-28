@@ -38,7 +38,7 @@ function ForumDiskusi({ user, discussions }) {
                         discussion={discussion.body}
                         author={discussion.author}
                         time={discussion.time}
-                        totalResponse="2" //belum pake konten dari db
+                        totalResponse={discussion.totalResponse}
                         authorLink={route("user.show", discussion.author)}
                         detailLink={route("forum.detail", discussion.id)}
                     />

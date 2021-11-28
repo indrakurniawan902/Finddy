@@ -1,12 +1,12 @@
 import React from "react";
 
-function Reply({ name, username, reply, time }) {
+function Reply({ name, username, reply, time, avatar }) {
     return (
         <div className="flex flex-col gap-2 mt-2">
             <div className="head flex items-end justify-between">
                 <div className="flex gap-2">
                     <div className="h-8 w-8 rounded-full bg-orange-3 overflow-hidden">
-                        <img src="" alt="avatar" />
+                        <img src={`${base_url}/${avatar}`} alt="avatar" />
                     </div>
                     <div>
                         <h4 className="text-sm font-bold text-black-1">
