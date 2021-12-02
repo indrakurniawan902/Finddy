@@ -9,9 +9,7 @@ import { Inertia } from "@inertiajs/inertia";
 import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox";
 
 function DetailsTeman({ user, userDetail, prevUrl, status }) {
-    // console.log(userDetail, status);
     const [image, setImage] = useState(base_url + "/" + userDetail.foto_profil);
-    console.log(prevUrl);
     const handleAdd = (e) => {
         e.preventDefault();
 

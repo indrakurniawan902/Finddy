@@ -19,7 +19,6 @@ function Discussion({
     authorLink,
     isEditable,
     editLink,
-    deleteLink,
     status,
 }) {
     const handleDelete = () => {
@@ -51,11 +50,17 @@ function Discussion({
         >
             <div className="flex justify-end md:justify-between items-center flex-wrap gap-2">
                 <h3 className="text-blue-3 font-bold text-lg hover:text-blue-4">
-                    <Link href={detailLink}>{title}</Link>
+                    <Link href={status == 1 ? detailLink : "#"}>{title}</Link>
                 </h3>
                 {isEditable ? (
                     <div className="flex gap-3 items-center mb-3">
-                        <p className="text-xs">{status}</p>
+                        <p className="text-xs">
+                            {status == 1 ? (
+                                <span className="text-green-3">Diizinkan</span>
+                            ) : (
+                                <span className="text-orange-3">Menunggu</span>
+                            )}
+                        </p>
                         <Link href={editLink}>
                             <img
                                 src={editIcon}

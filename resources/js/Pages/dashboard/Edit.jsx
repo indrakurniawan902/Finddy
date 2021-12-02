@@ -7,7 +7,6 @@ import swal from "sweetalert2";
 import { Inertia } from "@inertiajs/inertia";
 
 function Edit({ user, editUser, errors }) {
-    console.log(errors);
     const [values, setValues] = useState({
         username: editUser.username,
         nama_lengkap: editUser.nama_lengkap,

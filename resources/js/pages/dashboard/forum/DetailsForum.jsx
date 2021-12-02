@@ -9,8 +9,6 @@ import { Inertia } from "@inertiajs/inertia";
 import swal from "sweetalert2";
 
 function DetailsForum({ user, details, errors, replies }) {
-    console.log(replies);
-
     const [values, setValues] = useState({
         content: "",
     });
@@ -42,7 +40,7 @@ function DetailsForum({ user, details, errors, replies }) {
                     text: "Tanggapan berhasil dikirim",
                     confirmButtonColor: "#607EF5",
                 });
-                setValues({content:""})
+                setValues({ content: "" });
             },
             onError: () => {
                 swal.fire({
@@ -85,7 +83,10 @@ function DetailsForum({ user, details, errors, replies }) {
             />
             <h2 className="h3 mt-6 mb-6">Tanggapan</h2>
             <div className="py-3 px-5 flex flex-col gap-4 rounded-lg w-auto lg:w-3/4 bg-white-1">
-                <form className="flex flex-col justify-end mb-6" onSubmit={handleSubmit}>
+                <form
+                    className="flex flex-col justify-end mb-6"
+                    onSubmit={handleSubmit}
+                >
                     <textarea
                         rows="3"
                         name="content"
@@ -100,21 +101,21 @@ function DetailsForum({ user, details, errors, replies }) {
                         Kirim Tanggapan
                     </Button>
                 </form>
-                
-            {replies ? (
-                replies.map((reply, index) => (
-                    <Reply
-                        key={index}
-                        name={reply.name}
-                        time={reply.created_at}
-                        username={reply.username}
-                        reply={reply.content}
-                        avatar={reply.profil}
-                    />
-                ))
-            ) : (
-                <p className="mt-4">Belum ada tanggapan</p>
-            )}
+
+                {replies ? (
+                    replies.map((reply, index) => (
+                        <Reply
+                            key={index}
+                            name={reply.name}
+                            time={reply.created_at}
+                            username={reply.username}
+                            reply={reply.content}
+                            avatar={reply.profil}
+                        />
+                    ))
+                ) : (
+                    <p className="mt-4">Belum ada tanggapan</p>
+                )}
             </div>
         </>
     );

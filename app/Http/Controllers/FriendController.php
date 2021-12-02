@@ -50,6 +50,30 @@ class FriendController extends Controller
         ]);
     }
 
+    public function search(Request $request)
+    {
+        $keyword = $request->keyword;
+        $users = User::where('bidang_minat', 'like', "%" . $keyword . "%")->get();
+        return Inertia::render('dashboard/TemanBelajar', [
+            'users_search' => $users->map(function ($user) {
+                $isFriend = $user->isFriendWith(Auth::user());
+                $hasSentRequest = Auth::user()->hasSentFriendRequestTo($user);
+                $hasFriendRequest = Auth::user()->hasFriendRequestFrom($user);
+                return [
+                    'id' => $user->id,
+                    'nama_lengkap' => $user->nama_lengkap,
+                    'username' => $user->username,
+                    'bidang_minat' => $user->bidang_minat,
+                    'foto' => $user->foto_profil,
+                    'isFriend' => $isFriend,
+                    'isSent' => $hasSentRequest,
+                    'isWait' => $hasFriendRequest
+                ];
+            }),
+            'keyword_value' => $keyword,
+        ]);
+    }
+
     public function add($id)
     {
         $user = Auth::user();

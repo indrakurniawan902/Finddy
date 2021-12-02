@@ -38,7 +38,7 @@ class HandleInertiaRequests extends Middleware
     {
         return array_merge(parent::share($request), [
             'user' => fn () => $request->user()
-                ? $request->user()->only('id', 'email', 'nama_lengkap', 'bidang_minat', 'perguruan_tinggi', 'jurusan', 'no_hp', 'foto_profil', 'instagram')
+                ? $request->user()->only('id', 'username', 'email', 'nama_lengkap', 'bidang_minat', 'perguruan_tinggi', 'jurusan', 'no_hp', 'foto_profil', 'instagram')
                 : null,
             'flash' => [
                 'message' => fn () => $request->session()->get('message')

@@ -18,7 +18,7 @@
     Platform pencari teman belajar sesuai dengan bidang/minat yang dipelajari dan sebagai tempat berdiskusi seputar permasalahan saat belajar.
     <br />
     <br />
-    <a href="https://finddy.herokuapp.com/">View Demo</a>
+    <a href="http://finddy.herokuapp.com/">View Demo</a>
     ·
     <a href="https://github.com/riansyh/finddy/issues">Report Bug</a>
     ·
@@ -66,7 +66,7 @@
 
 ## About The Project
 
-[![Finddy Screen Shot][product-screenshot]](https://example.com)
+[![Finddy Screen Shot][product-screenshot]](http://finddy.herokuapp.com/)
 
 This repository is a final project from Software Engineering Class, Teknik Informatika, Universitas Padjadjaran.
 
@@ -132,14 +132,6 @@ Start local development server
      php artisan serve
 
 Then access the localhost url at port 8000 by visiting [localhost:8000](http://localhost:8000) or [127.0.0.1:8000](http://127.0.0.1:8000).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- USAGE EXAMPLES -->
-
-## Usage
-
-_TBA_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

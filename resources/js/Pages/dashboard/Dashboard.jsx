@@ -1,3 +1,4 @@
+import { Link } from "@inertiajs/inertia-react";
 import React, { Fragment } from "react";
 import { Helmet } from "react-helmet";
 import Friend from "../../components/Friend";
@@ -5,10 +6,7 @@ import Layout from "../../components/Layout";
 import MotivateCard from "../../components/MotivateCard";
 import StatusCard from "../../partials/StatusCard";
 
-function Dashboard({ user, users, request, friends, count }) {
-    console.log("users:", users);
-    console.log("req:", request);
-    console.log("friend:", friends);
+function Dashboard({ friends, count }) {
     return (
         <Fragment>
             <Helmet>
@@ -36,40 +34,33 @@ function Dashboard({ user, users, request, friends, count }) {
             </div>
 
             <h3 className="h3 mt-8 mb-6">Teman Belajar</h3>
-            <div className="flex flex-col gap-3">
-                {friends.map((user, index) => (
-                    <Friend
-                        id={user.id}
-                        key={index}
-                        name={user.nama_lengkap}
-                        bidang={user.bidang_minat}
-                        avatar={user.foto}
-                        href={route("user.show", user.username)}
-                        isFriend
-                    />
-                ))}
-            </div>
-
-            <h3 className="h3 mt-8 mb-6">Semua Pengguna</h3>
-            <div className="flex flex-col gap-3">
-                {users.map((user, index) => {
-                    if (user.username !== null) {
-                        return (
-                            <Friend
-                                id={user.id}
-                                key={index}
-                                name={user.nama_lengkap}
-                                bidang={user.bidang_minat}
-                                avatar={user.foto}
-                                href={route("user.show", user.username)}
-                                isFriend={user.isFriend}
-                                isWait={user.isWait}
-                                isSent={user.isSent}
-                            />
-                        );
-                    }
-                })}
-            </div>
+            {friends.length > 0 ? (
+                <div className="flex flex-col gap-3">
+                    {friends.map((user, index) => (
+                        <Friend
+                            id={user.id}
+                            key={index}
+                            name={user.nama_lengkap}
+                            bidang={user.bidang_minat}
+                            avatar={user.foto}
+                            href={route("user.show", user.username)}
+                            isFriend
+                        />
+                    ))}
+                </div>
+            ) : (
+                <>
+                    <p className="text-center text-xl text-black-2 mt-20">
+                        Saat ini kamu belum memiliki teman belajar
+                    </p>
+                    <Link
+                        href={route("friend")}
+                        className="font-bold text-base text-blue-3 text-center w-full block mb-6"
+                    >
+                        Cari Teman Belajar Sekarang
+                    </Link>
+                </>
+            )}
         </Fragment>
     );
 }

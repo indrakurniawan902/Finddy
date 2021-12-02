@@ -7,8 +7,6 @@ import Layout from "../../../components/Layout";
 import BackButton from "../../../partials/BackButton";
 
 function EditForum({ user, id, title, body }) {
-    console.log(user);
-
     const [values, setValues] = useState({
         title,
         body,

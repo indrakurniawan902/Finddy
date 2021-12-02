@@ -18,7 +18,7 @@ class CreateDiscussionsTable extends Migration
             $table->foreignId('user_id');
             $table->string('title');
             $table->text('body');
-            $table->boolean('is_admit')->default('1');
+            $table->boolean('is_admit')->default('0');
             $table->timestamps();
         });
     }

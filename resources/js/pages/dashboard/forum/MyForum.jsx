@@ -1,12 +1,10 @@
 import React, { Fragment } from "react";
 import { Helmet } from "react-helmet";
-import Button from "../../../components/Button";
 import Discussion from "../../../components/Forum/Discussion";
 import Layout from "../../../components/Layout";
 import BackButton from "../../../partials/BackButton";
 
-function MyForum({ user, discussions }) {
-    console.log(discussions);
+function MyForum({ discussions }) {
     return (
         <Fragment>
             <Helmet>
@@ -21,26 +19,29 @@ function MyForum({ user, discussions }) {
             <BackButton href={route("forum")}></BackButton>
             <h2 className="h3 mt-6 mb-6">Diskusiku</h2>
 
-            {discussions ? (
-                discussions.map((discussion, index) => (
-                    <Discussion
-                        key={index}
-                        id={discussion.id}
-                        title={discussion.title}
-                        discussion={discussion.body}
-                        author={discussion.author}
-                        time={discussion.time}
-                        totalResponse={details.totalResponse}
-                        authorLink="#"
-                        detailLink={route("forum.detail", discussion.id)}
-                        isEditable
-                        editLink={route("forum.edit", discussion.id)}
-                        deleteLink={route("forum.delete", discussion.id)}
-                    />
-                ))
-            ) : (
-                <p className="mt-4">Belum ada diskusi yang kamu buat</p>
-            )}
+            <div className="flex flex-col gap-5">
+                {discussions ? (
+                    discussions.map((discussion, index) => (
+                        <Discussion
+                            key={index}
+                            id={discussion.id}
+                            title={discussion.title}
+                            discussion={discussion.body}
+                            author={discussion.author}
+                            time={discussion.time}
+                            totalResponse={discussion.totalResponse}
+                            authorLink="#"
+                            detailLink={route("forum.detail", discussion.id)}
+                            isEditable
+                            editLink={route("forum.edit", discussion.id)}
+                            deleteLink={route("forum.delete", discussion.id)}
+                            status={discussion.isAdmit}
+                        />
+                    ))
+                ) : (
+                    <p className="mt-4">Belum ada diskusi yang kamu buat</p>
+                )}
+            </div>
         </Fragment>
     );
 }

@@ -7,8 +7,6 @@ import { Inertia } from "@inertiajs/inertia";
 import swal from "sweetalert2";
 
 function CreateForum({ user }) {
-    console.log(user);
-
     const [values, setValues] = useState({
         title: "",
         body: "",
@@ -51,6 +49,7 @@ function CreateForum({ user }) {
             },
         });
     };
+
     return (
         <Fragment>
             <Helmet>

@@ -59,10 +59,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
         })->name('forum.create');
         Route::get('/forum/edit/{id}', [DiscussionController::class, 'show'])->name('forum.edit');
         Route::delete('/forum/delete/{id}', [DiscussionController::class, 'destroy'])->name('forum.delete');
+        Route::put('/forum/accept/{id}', [DiscussionController::class, 'accept'])->name('forum.accept');
         Route::put('/forum/update/{id}', [DiscussionController::class, 'update'])->name('forum.update');
         Route::post('/forum/post', [DiscussionController::class, 'store'])->name('forum.post');
         Route::get('/forum/my', [DiscussionController::class, 'showForum'])->name('forum.my');
         Route::get('/forum/detail/{id}', [DiscussionController::class, 'details'])->name('forum.detail');
+        Route::get('/forum/search', [DiscussionController::class, 'search'])->name('forum.search');
 
         // route friend
         Route::post('/add/{id}', [FriendController::class, 'add'])->name("add.friend");
@@ -70,6 +72,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('/deny/{id}', [FriendController::class, 'deny'])->name("deny.friend");
         Route::get('/teman', [FriendController::class, 'index'])->name("friend");
         Route::get('/teman/request', [FriendController::class, 'request'])->name("friend.request");
+        Route::get('/teman/search', [FriendController::class, 'search'])->name('friend.search');
 
         //route replies
         Route::post('/reply', [ReplyController::class, 'create'])->name("add.reply");

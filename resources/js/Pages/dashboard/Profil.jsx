@@ -5,7 +5,6 @@ import Button from "../../components/Button";
 import { Icon } from "@iconify/react";
 
 function Profil({ user }) {
-    console.log(user);
     return (
         <Fragment>
             <Helmet>
